@@ -1,0 +1,30 @@
+{
+    "name": "soldier/dbms-package",
+    "authors": [
+        {
+            "name": "mdaashir",
+            "email": "s.mohamedaashir@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Soldier\\DbmsPackage\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "watch": {
+        "composer_json": {
+            "files": ["composer.json", "composer.lock"],
+            "tasks": ["exec:composer_install"]
+        }
+    },
+    "exec": {
+        "composer_install": {
+            "cmd": "composer self-update && composer install --no-dev",
+            "exitCode": [0, 255]
+        }
+    }
+}
