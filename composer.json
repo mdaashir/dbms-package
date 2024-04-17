@@ -10,7 +10,8 @@
         
     },
     "scripts": {
-        "start": "php -S localhost:8000 -t /"
+        "start": "php -S localhost:1234 -t /",
+        "stop": "kill $(lsof -ti :1234 || true"
     },
     "watch": {
         "composer_json": {
