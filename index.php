@@ -3,7 +3,7 @@
 	<body>
 		<?php
 			echo "My first PHP script!";
-			$db_handle = pg_connect("host=localhost dbname=linux user=linux password=linux");
+			$db_handle = pg_connect("host=localhost dbname=restaurant user=user password=user");
 			if ($db_handle) {
 				echo '<br>Connection attempt succeeded.';
 				} else {
