@@ -7,10 +7,11 @@
         }
     ],
     "require": {},
-    "autoload": {
-        "psr-4": {
-            "Soldier\\DbmsPackage\\": "src/"
-        }
+    "scripts": {
+        "start": "php -S localhost:8000 -t /"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
     },
     "config": {
         "optimize-autoloader": true
