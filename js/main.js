@@ -117,3 +117,62 @@
     
 })(jQuery);
 
+// HANDLE ADD ORDERS IN booking.html
+function addItemToPage() {
+  // Get the form data
+  var formData = {
+    email: $('#email').val(),
+    datetime: $('#datetime').val(),
+    type: $('#select1').val(),
+    message: $('#message').val()
+  };
+
+  // Send an AJAX request to add the item
+  $.ajax({
+    url: 'add_item.php',
+    type: 'POST',
+    data: formData,
+    success: function(data) {
+      // Display a success message
+      alert('Item added successfully!');
+
+      // Clear the form fields
+      $('#email').val('');
+      $('#datetime').val('');
+      $('#select1').val('1');
+      $('#message').val('');
+    }
+  });
+}
+
+//ADDING TO CART
+document.querySelectorAll('#menu-item-form-1, #menu-item-form-2, #menu-item-form-3, #menu-item-form-4, #menu-item-form-5, #menu-item-form-6, #menu-item-form-7, #menu-item-form-8').forEach(form => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const menuId = formData.get('menu_id');
+      const quantity = formData.get('quantity');
+      addToCart(menuId, quantity);
+    });
+  });
+  
+  let cart = [];
+  
+  function addToCart(menuId, quantity) {
+    const menuItem = cart.find(item => item.menu_id === menuId);
+    if (menuItem) {
+      menuItem.quantity += quantity;
+    } else {
+      cart.push({ menu_id: menuId, quantity: quantity });
+    }
+    updateCartTotal();
+  }
+  
+  function updateCartTotal() {
+    let total = 0;
+    cart.forEach(item => {
+      const menu = menuItems.find(menu => menu.id === item.menu_id);
+      total += menu.price * item.quantity;
+    });
+    document.querySelector('#cart-total').textContent = `$${total.toFixed(2)}`;
+  }
