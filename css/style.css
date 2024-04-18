@@ -481,3 +481,35 @@
     padding-right: 0;
     border-right: none;
 }
+
+.bill-box {
+    margin-bottom: 20px;
+}
+
+.bill-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bill-detail {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.placeholder {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.placeholder-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.placeholder-content {
+    font-size: 16px;
+}
