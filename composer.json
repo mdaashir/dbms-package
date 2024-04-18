@@ -11,7 +11,7 @@
     },
     "scripts": {
         "start": "php -S localhost:1234 -t /",
-        "stop": "kill $(lsof -ti :1234 || true"
+        "stop": "kill $(lsof -ti :1234) || true"
     },
     "watch": {
         "composer_json": {
