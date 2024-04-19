@@ -1,0 +1,90 @@
+Food_items,Breakfast,Lunch,Dinner,VegNovVeg
+aloo Tikki,0,1,1, 
+Kadhi,1,0,0,0
+Bananas,1,0,0,0
+Bread made in wheat,0,1,1,0
+Mango Chutney,1,0,0,0
+Baati,0,1,1,0
+Brown Rice,0,1,1,0
+Cauliflower,0,1,1,0
+cheese,1,0,0,0
+Coffee,1,0,0,0
+Corn,1,1,1,0
+Bhel Puri,0,0,1,0
+Grapes,1,0,0,0
+Milk,1,0,1,0
+Cashew Nuts,1,0,0,0
+Paneer Tikka,0,1,1,0
+Orange,1,0,0,0
+Maggie,0,1,1,0
+Pears,1,0,0,0
+Aloo Matar ,0,1,1,0
+Glucone'D,1,0,0,0
+Sitafal,0,1,1,0
+Rohu Curry,0,1,1,1
+Surmai,0,0,1,1
+Veg Pizza,0,0,1,0
+Cheese Pizza,0,0,1,0
+Onion Pakoda,0,1,1,0
+Butter Chicken,0,1,1,1
+Chicken Kolapuri,0,1,1,0
+Chicken 65,0,1,1,1
+Gulab Jamun,0,1,1,0
+Jalebi,0,1,1,0
+Dairy Milk,1,0,1,0
+Fruit and Nut chocolate,1,0,1,0
+Dosa,1,1,1,0
+Idli,1,1,1,0
+Poha,1,0,0,0
+Chappati,0,1,1,0
+Tomato,1,1,1,0
+Dahi,1,1,1,0
+Cake,1,0,0,0
+Chowmein,0,1,1,0
+Uttapam,1,1,1,0
+Bhaji Pav,1,0,0,0
+Dal Makhani,0,1,1,0
+Almonds,1,0,0,0
+Mushrooms,1,1,1,0
+Egg Yolk ,1,0,0,1
+Sweet Potatoes ,1,1,0,0
+Masala Aloo,1,1,1,0
+White Rice,0,1,1,0
+Orange juice,1,0,0,0
+Sweet Dahi,1,1,1,0
+Cornflakes,1,0,0,0
+Laal Chai,1,0,0,0
+Pumpkin seeds,1,0,0,0
+Butter Paneer,0,1,1,0
+Salmon,0,1,1,1
+Chocos,1,0,0,0
+Beans,0,1,1,0
+Dal Fry,0,1,1,0
+Red Sauce Pasta,0,1,1,0
+Chai,1,0,0,0
+Apples,1,0,0,0
+Strawberries,1,0,0,0
+Kiwi,1,1,0,0
+Mutton,0,1,1,1
+Boiled Chicken,0,1,1,1
+Chicken Tandoori,0,0,1,1
+Kebab,0,1,1,1
+Tomato Rice,0,1,1,0
+Prawns,0,0,1,1
+Momos,0,0,1,1
+Mixed Veg,0,1,1,0
+Chicken sausage,0,0,1,1
+Malai Chicken,0,0,1,1
+Nachos,1,1,1,0
+Chicken Popcorn,0,1,1,1
+Nalli Nihari,0,1,1,1
+Fish Eggs,0,1,1,1
+King Fish,1,0,0,1
+Banana Chips,1,0,0,0
+Honey,1,0,1,0
+Chocolate Icecream,0,0,1,0
+Vanilla Ice cream,0,0,1,0
+Strawberry Icecream,0,0,1,0
+Rasmalai,0,0,1,0
+Chocolate milk,1,0,0,0
+Kheer,0,0,1,0
