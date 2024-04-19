@@ -1,90 +1,89 @@
-Food_items,Breakfast,Lunch,Dinner,VegNovVeg
-aloo Tikki,0,1,1, 
-Kadhi,1,0,0,0
-Bananas,1,0,0,0
-Bread made in wheat,0,1,1,0
-Mango Chutney,1,0,0,0
-Baati,0,1,1,0
-Brown Rice,0,1,1,0
-Cauliflower,0,1,1,0
-cheese,1,0,0,0
-Coffee,1,0,0,0
-Corn,1,1,1,0
-Bhel Puri,0,0,1,0
-Grapes,1,0,0,0
-Milk,1,0,1,0
-Cashew Nuts,1,0,0,0
-Paneer Tikka,0,1,1,0
-Orange,1,0,0,0
-Maggie,0,1,1,0
-Pears,1,0,0,0
-Aloo Matar ,0,1,1,0
-Glucone'D,1,0,0,0
-Sitafal,0,1,1,0
-Rohu Curry,0,1,1,1
-Surmai,0,0,1,1
-Veg Pizza,0,0,1,0
-Cheese Pizza,0,0,1,0
-Onion Pakoda,0,1,1,0
-Butter Chicken,0,1,1,1
-Chicken Kolapuri,0,1,1,0
-Chicken 65,0,1,1,1
-Gulab Jamun,0,1,1,0
-Jalebi,0,1,1,0
-Dairy Milk,1,0,1,0
-Fruit and Nut chocolate,1,0,1,0
-Dosa,1,1,1,0
-Idli,1,1,1,0
-Poha,1,0,0,0
-Chappati,0,1,1,0
-Tomato,1,1,1,0
-Dahi,1,1,1,0
-Cake,1,0,0,0
-Chowmein,0,1,1,0
-Uttapam,1,1,1,0
-Bhaji Pav,1,0,0,0
-Dal Makhani,0,1,1,0
-Almonds,1,0,0,0
-Mushrooms,1,1,1,0
-Egg Yolk ,1,0,0,1
-Sweet Potatoes ,1,1,0,0
-Masala Aloo,1,1,1,0
-White Rice,0,1,1,0
-Orange juice,1,0,0,0
-Sweet Dahi,1,1,1,0
-Cornflakes,1,0,0,0
-Laal Chai,1,0,0,0
-Pumpkin seeds,1,0,0,0
-Butter Paneer,0,1,1,0
-Salmon,0,1,1,1
-Chocos,1,0,0,0
-Beans,0,1,1,0
-Dal Fry,0,1,1,0
-Red Sauce Pasta,0,1,1,0
-Chai,1,0,0,0
-Apples,1,0,0,0
-Strawberries,1,0,0,0
-Kiwi,1,1,0,0
-Mutton,0,1,1,1
-Boiled Chicken,0,1,1,1
-Chicken Tandoori,0,0,1,1
-Kebab,0,1,1,1
-Tomato Rice,0,1,1,0
-Prawns,0,0,1,1
-Momos,0,0,1,1
-Mixed Veg,0,1,1,0
-Chicken sausage,0,0,1,1
-Malai Chicken,0,0,1,1
-Nachos,1,1,1,0
-Chicken Popcorn,0,1,1,1
-Nalli Nihari,0,1,1,1
-Fish Eggs,0,1,1,1
-King Fish,1,0,0,1
-Banana Chips,1,0,0,0
-Honey,1,0,1,0
-Chocolate Icecream,0,0,1,0
-Vanilla Ice cream,0,0,1,0
-Strawberry Icecream,0,0,1,0
-Rasmalai,0,0,1,0
-Chocolate milk,1,0,0,0
-Kheer,0,0,1,0
+aloo Tikki,false,true,true,false
+Kadhi,true,false,false,false
+Bananas,true,false,false,false
+Bread made in wheat,false,true,true,false
+Mango Chutney,true,false,false,false
+Baati,false,true,true,false
+Brown Rice,false,true,true,false
+Cauliflower,false,true,true,false
+cheese,true,false,false,false
+Coffee,true,false,false,false
+Corn,true,true,true,false
+Bhel Puri,false,false,true,false
+Grapes,true,false,false,false
+Milk,true,false,true,false
+Cashew Nuts,true,false,false,false
+Paneer Tikka,false,true,true,false
+Orange,true,false,false,false
+Maggie,false,true,true,false
+Pears,true,false,false,false
+Aloo Matar ,false,true,true,false
+Glucone'D,true,false,false,false
+Sitafal,false,true,true,false
+Rohu Curry,false,true,true,true
+Surmai,false,false,true,true
+Veg Pizza,false,false,true,false
+Cheese Pizza,false,false,true,false
+Onion Pakoda,false,true,true,false
+Butter Chicken,false,true,true,true
+Chicken Kolapuri,false,true,true,false
+Chicken 65,false,true,true,true
+Gulab Jamun,false,true,true,false
+Jalebi,false,true,true,false
+Dairy Milk,true,false,true,false
+Fruit and Nut chocolate,true,false,true,false
+Dosa,true,true,true,false
+Idli,true,true,true,false
+Poha,true,false,false,false
+Chappati,false,true,true,false
+Tomato,true,true,true,false
+Dahi,true,true,true,false
+Cake,true,false,false,false
+Chowmein,false,true,true,false
+Uttapam,true,true,true,false
+Bhaji Pav,true,false,false,false
+Dal Makhani,false,true,true,false
+Almonds,true,false,false,false
+Mushrooms,true,true,true,false
+Egg Yolk ,true,false,false,true
+Sweet Potatoes ,true,true,false,false
+Masala Aloo,true,true,true,false
+White Rice,false,true,true,false
+Orange juice,true,false,false,false
+Sweet Dahi,true,true,true,false
+Cornflakes,true,false,false,false
+Laal Chai,true,false,false,false
+Pumpkin seeds,true,false,false,false
+Butter Paneer,false,true,true,false
+Salmon,false,true,true,true
+Chocos,true,false,false,false
+Beans,false,true,true,false
+Dal Fry,false,true,true,false
+Red Sauce Pasta,false,true,true,false
+Chai,true,false,false,false
+Apples,true,false,false,false
+Strawberries,true,false,false,false
+Kiwi,true,true,false,false
+Mutton,false,true,true,true
+Boiled Chicken,false,true,true,true
+Chicken Tandoori,false,false,true,true
+Kebab,false,true,true,true
+Tomato Rice,false,true,true,false
+Prawns,false,false,true,true
+Momos,false,false,true,true
+Mixed Veg,false,true,true,false
+Chicken sausage,false,false,true,true
+Malai Chicken,false,false,true,true
+Nachos,true,true,true,false
+Chicken Popcorn,false,true,true,true
+Nalli Nihari,false,true,true,true
+Fish Eggs,false,true,true,true
+King Fish,true,false,false,true
+Banana Chips,true,false,false,false
+Honey,true,false,true,false
+Chocolate Icecream,false,false,true,false
+Vanilla Ice cream,false,false,true,false
+Strawberry Icecream,false,false,true,false
+Rasmalai,false,false,true,false
+Chocolate milk,true,false,false,false
+Kheer,false,false,true,false
