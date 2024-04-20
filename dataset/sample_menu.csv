@@ -1,89 +1,90 @@
-aloo Tikki,false,true,true,false
-Kadhi,true,false,false,false
-Bananas,true,false,false,false
-Bread made in wheat,false,true,true,false
-Mango Chutney,true,false,false,false
-Baati,false,true,true,false
-Brown Rice,false,true,true,false
-Cauliflower,false,true,true,false
-cheese,true,false,false,false
-Coffee,true,false,false,false
-Corn,true,true,true,false
-Bhel Puri,false,false,true,false
-Grapes,true,false,false,false
-Milk,true,false,true,false
-Cashew Nuts,true,false,false,false
-Paneer Tikka,false,true,true,false
-Orange,true,false,false,false
-Maggie,false,true,true,false
-Pears,true,false,false,false
-Aloo Matar ,false,true,true,false
-Glucone'D,true,false,false,false
-Sitafal,false,true,true,false
-Rohu Curry,false,true,true,true
-Surmai,false,false,true,true
-Veg Pizza,false,false,true,false
-Cheese Pizza,false,false,true,false
-Onion Pakoda,false,true,true,false
-Butter Chicken,false,true,true,true
-Chicken Kolapuri,false,true,true,false
-Chicken 65,false,true,true,true
-Gulab Jamun,false,true,true,false
-Jalebi,false,true,true,false
-Dairy Milk,true,false,true,false
-Fruit and Nut chocolate,true,false,true,false
-Dosa,true,true,true,false
-Idli,true,true,true,false
-Poha,true,false,false,false
-Chappati,false,true,true,false
-Tomato,true,true,true,false
-Dahi,true,true,true,false
-Cake,true,false,false,false
-Chowmein,false,true,true,false
-Uttapam,true,true,true,false
-Bhaji Pav,true,false,false,false
-Dal Makhani,false,true,true,false
-Almonds,true,false,false,false
-Mushrooms,true,true,true,false
-Egg Yolk ,true,false,false,true
-Sweet Potatoes ,true,true,false,false
-Masala Aloo,true,true,true,false
-White Rice,false,true,true,false
-Orange juice,true,false,false,false
-Sweet Dahi,true,true,true,false
-Cornflakes,true,false,false,false
-Laal Chai,true,false,false,false
-Pumpkin seeds,true,false,false,false
-Butter Paneer,false,true,true,false
-Salmon,false,true,true,true
-Chocos,true,false,false,false
-Beans,false,true,true,false
-Dal Fry,false,true,true,false
-Red Sauce Pasta,false,true,true,false
-Chai,true,false,false,false
-Apples,true,false,false,false
-Strawberries,true,false,false,false
-Kiwi,true,true,false,false
-Mutton,false,true,true,true
-Boiled Chicken,false,true,true,true
-Chicken Tandoori,false,false,true,true
-Kebab,false,true,true,true
-Tomato Rice,false,true,true,false
-Prawns,false,false,true,true
-Momos,false,false,true,true
-Mixed Veg,false,true,true,false
-Chicken sausage,false,false,true,true
-Malai Chicken,false,false,true,true
-Nachos,true,true,true,false
-Chicken Popcorn,false,true,true,true
-Nalli Nihari,false,true,true,true
-Fish Eggs,false,true,true,true
-King Fish,true,false,false,true
-Banana Chips,true,false,false,false
-Honey,true,false,true,false
-Chocolate Icecream,false,false,true,false
-Vanilla Ice cream,false,false,true,false
-Strawberry Icecream,false,false,true,false
-Rasmalai,false,false,true,false
-Chocolate milk,true,false,false,false
-Kheer,false,false,true,false
+food_items,is_breakfast,is_lunch,is_dinner,is_veg,description,price
+Aloo Tikki,false,true,true,false,"Aloo Tikki is a popular Indian snack made with mashed potatoes and spices, deep-fried until crispy.",50
+Kadhi,true,false,false,false,"Kadhi is a yogurt-based curry with gram flour dumplings, flavored with spices like fenugreek and cumin.",100
+Bananas,true,false,false,false,"Bananas are a nutritious fruit rich in potassium, fiber, and various vitamins.",20
+Bread made in wheat,false,true,true,false,"Wheat bread is a staple food made from wheat flour, water, yeast, and salt.",30
+Mango Chutney,true,false,false,false,"Mango chutney is a tangy and spicy condiment made from ripe mangoes, vinegar, sugar, and spices.",80
+Baati,false,true,true,false,"Baati is a traditional Rajasthani bread made from whole wheat flour, baked in a clay oven (tandoor).",40
+Brown Rice,false,true,true,false,"Brown rice is whole grain rice with the inedible outer hull removed, retaining the bran layer and germ.",60
+Cauliflower,false,true,true,false,"Cauliflower is a cruciferous vegetable high in fiber and nutrients, often used in Indian cuisine.",40
+Cheese,true,false,false,false,"Cheese is a dairy product made from pressed milk curds, available in various textures and flavors.",90
+Coffee,true,false,false,false,"Coffee is a brewed beverage made from roasted coffee beans, enjoyed for its stimulating effects.",50
+Corn,true,true,true,false,"Corn, also known as maize, is a cereal grain rich in vitamins, minerals, and fiber.",30
+Bhel Puri,false,false,true,false,"Bhel Puri is a popular Indian street food snack made with puffed rice, vegetables, and tangy chutneys.",70
+Grapes,true,false,false,false,"Grapes are juicy and sweet fruits available in various colors and varieties.",40
+Milk,true,false,true,false,"Milk is a nutrient-rich dairy beverage produced by mammals, commonly consumed for its calcium content.",25
+Cashew Nuts,true,false,false,false,"Cashew nuts are kidney-shaped seeds often used in cooking and snacking, rich in healthy fats and protein.",120
+Paneer Tikka,false,true,true,false,"Paneer Tikka is a popular Indian appetizer made with marinated paneer cubes grilled to perfection.",150
+Orange,true,false,false,false,"Oranges are citrus fruits rich in vitamin C and antioxidants, known for their tangy flavor.",30
+Maggie,false,true,true,false,"Maggie is a brand of instant noodles popular in India, typically cooked with spices and vegetables.",20
+Pears,true,false,false,false,"Pears are sweet and juicy fruits with a distinctive bell shape and smooth skin.",50
+Aloo Matar ,false,true,true,false,"Aloo Matar is a North Indian curry made with potatoes and peas, flavored with aromatic spices.",80
+Glucone'D,true,false,false,false,"Glucone'D is a brand of glucose powder used as a quick energy source in beverages and cooking.",15
+Sitafal,false,true,true,false,"Sitafal, also known as custard apple, is a tropical fruit with creamy flesh and a sweet flavor.",70
+Rohu Curry,false,true,true,true,"Rohu Curry is a traditional Indian fish curry made with rohu fish cooked in a flavorful gravy.",200
+Surmai,false,false,true,true,"Surmai, also known as kingfish or king mackerel, is a popular fish in Indian cuisine, often grilled or fried.",250
+Veg Pizza,false,false,true,false,"Veg Pizza is a pizza topped with assorted vegetables like bell peppers, onions, tomatoes, and olives.",200
+Cheese Pizza,false,false,true,false,"Cheese Pizza is a pizza topped with mozzarella cheese and sometimes additional toppings like tomatoes or basil.",220
+Onion Pakoda,false,true,true,false,"Onion Pakoda is a deep-fried Indian snack made with sliced onions coated in chickpea flour batter.",80
+Butter Chicken,false,true,true,true,"Butter Chicken is a rich and creamy Indian chicken curry made with marinated chicken cooked in a buttery tomato sauce.",250
+Chicken Kolapuri,false,true,true,false,"Chicken Kolhapuri is a spicy chicken curry from Maharashtra, flavored with a special Kolhapuri masala.",230
+Chicken 65,false,true,true,true,"Chicken 65 is a spicy and tangy Indian chicken dish, typically served as an appetizer or snack.",180
+Gulab Jamun,false,true,true,false,"Gulab Jamun is a popular Indian dessert made from milk solids, fried and soaked in sugar syrup.",120
+Jalebi,false,true,true,false,"Jalebi is a sweet Indian dessert made by deep-frying wheat flour batter in pretzel or circular shapes, then soaked in sugar syrup.",100
+Dairy Milk,true,false,true,false,"Dairy Milk is a popular brand of milk chocolate known for its smooth texture and creamy taste.",40
+Fruit and Nut chocolate,true,false,true,false,"Fruit and Nut chocolate is a type of chocolate containing dried fruits and nuts, adding texture and flavor.",60
+Dosa,true,true,true,false,"Dosa is a thin and crispy South Indian pancake made from fermented rice and lentil batter, often served with chutney and sambar.",80
+Idli,true,true,true,false,"Idli is a soft and fluffy South Indian steamed rice cake made from fermented rice and lentil batter.",60
+Poha,true,false,false,false,"Poha is a popular Indian breakfast dish made from flattened rice, often cooked with onions, potatoes, and spices.",50
+Chappati,false,true,true,false,"Chapati, also known as roti, is a round flatbread made from whole wheat flour, commonly eaten in South Asia.",20
+Tomato,true,true,true,false,"Tomatoes are red, juicy fruits commonly used as a vegetable in cooking, prized for their tangy flavor.",10
+Dahi,true,true,true,false,"Dahi, also known as yogurt, is a dairy product made by fermenting milk with bacterial cultures, often eaten as a side dish or used in cooking.",30
+Cake,true,false,false,false,"Cake is a sweet baked dessert made from flour, sugar, eggs, and other ingredients, often frosted or decorated.",200
+Chowmein,false,true,true,false,"Chow mein is a Chinese stir-fried noodle dish typically made with noodles, vegetables, and sometimes meat or tofu.",120
+Uttapam,true,true,true,false,"Uttapam is a thick South Indian pancake made from fermented rice and lentil batter, topped with vegetables.",100
+Bhaji Pav,true,false,false,false,"Bhaji Pav is a popular Mumbai street food consisting of spicy vegetable curry (bhaji) served with soft bread rolls (pav).",70
+Dal Makhani,false,true,true,false,"Dal Makhani is a creamy and flavorful Punjabi lentil dish made with black lentils, kidney beans, butter, and cream.",180
+Almonds,true,false,false,false,"Almonds are nutrient-dense nuts rich in healthy fats, vitamins, and minerals.",150
+Mushrooms,true,true,true,false,"Mushrooms are edible fungi with a unique flavor and texture, commonly used in cooking as a vegetable.",100
+Egg Yolk ,true,false,false,true,"Egg yolk is the yellow part of an egg rich in nutrients like protein, fat, vitamins, and minerals.",10
+Sweet Potatoes ,true,true,false,false,"Sweet potatoes are starchy root vegetables rich in fiber, vitamins, and minerals, often baked, boiled, or mashed.",80
+Masala Aloo,true,true,true,false,"Masala Aloo is a spicy Indian potato dish cooked with aromatic spices, often served as a side dish or snack.",70
+White Rice,false,true,true,false,"White rice is a staple food made from polished rice grains, commonly served as a side dish or base for various dishes.",40
+Orange juice,true,false,false,false,"Orange juice is a refreshing beverage made from freshly squeezed oranges, rich in vitamin C and other nutrients.",60
+Sweet Dahi,true,true,true,false,"Sweet Dahi is yogurt sweetened with sugar or honey, often flavored with cardamom, saffron, or fruits.",40
+Cornflakes,true,false,false,false,"Cornflakes are a popular breakfast cereal made from toasted flakes of corn, often eaten with milk and fruits.",80
+Laal Chai,true,false,false,false,"Laal Chai, also known as red tea, is a beverage made from tea leaves with added spices like cinnamon, cardamom, and cloves.",30
+Pumpkin seeds,true,false,false,false,"Pumpkin seeds, also known as pepitas, are edible seeds from pumpkins, rich in nutrients like magnesium, zinc, and iron.",150
+Butter Paneer,false,true,true,false,"Butter Paneer, also known as Paneer Makhani, is a creamy Indian curry made with paneer cheese cooked in a buttery tomato sauce.",200
+Salmon,false,true,true,true,"Salmon is a fatty fish rich in omega-3 fatty acids, protein, and vitamin D, often grilled, baked, or smoked.",300
+Chocos,true,false,false,false,"Chocos is a brand of chocolate-flavored breakfast cereal popular among children.",100
+Beans,false,true,true,false,"Beans are edible seeds or pods of various plants, rich in protein, fiber, and essential nutrients.",80
+Dal Fry,false,true,true,false,"Dal Fry is a popular Indian lentil dish made with cooked lentils tempered with spices, onions, tomatoes, and garlic.",120
+Red Sauce Pasta,false,true,true,false,"Red Sauce Pasta is a pasta dish served with a tomato-based sauce, often flavored with garlic, onions, and herbs.",150
+Chai,true,false,false,false,"Chai is a spiced tea beverage made from black tea leaves, milk, sugar, and a blend of spices like cardamom, ginger, and cloves.",30
+Apples,true,false,false,false,"Apples are crunchy and juicy fruits rich in antioxidants, fiber, and various vitamins.",40
+Strawberries,true,false,false,false,"Strawberries are sweet and tart berries known for their vibrant red color and juicy texture.",80
+Kiwi,true,true,false,false,"Kiwi is a small, fuzzy fruit with green flesh and black seeds, rich in vitamin C, fiber, and antioxidants.",60
+Mutton,false,true,true,true,"Mutton refers to the meat of mature sheep, often used in various cuisines for its rich flavor and tender texture.",300
+Boiled Chicken,false,true,true,true,"Boiled Chicken is chicken cooked by boiling in water or broth, often used in salads, sandwiches, or soups.",200
+Chicken Tandoori,false,false,true,true,"Chicken Tandoori is a popular Indian dish of marinated chicken roasted in a tandoor, a cylindrical clay oven.",250
+Kebab,false,true,true,true,"Kebab refers to various grilled or skewered meat dishes originating from the Middle East and South Asia.",180
+Tomato Rice,false,true,true,false,"Tomato Rice is a South Indian rice dish cooked with tomatoes, spices, and herbs, often served with raita or curry.",120
+Prawns,false,false,true,true,"Prawns are shellfish similar to shrimp, prized for their sweet flavor and tender texture, often grilled, sautéed, or boiled.",250
+Momos,false,false,true,true,"Momos are a type of dumpling popular in Tibetan and Nepali cuisine, filled with seasoned meat or vegetables.",100
+Mixed Veg,false,true,true,false,"Mixed Veg is a dish made with assorted vegetables cooked together, often flavored with spices and herbs.",100
+Chicken sausage,false,false,true,true,"Chicken sausage is a type of sausage made from ground chicken meat seasoned with spices, herbs, and other flavorings.",150
+Malai Chicken,false,false,true,true,"Malai Chicken is a creamy and mild Indian chicken curry made with marinated chicken cooked in a rich cashew nut and cream sauce.",280
+Nachos,true,true,true,false,"Nachos are a Mexican snack dish consisting of tortilla chips topped with cheese and various toppings, often served with salsa and guacamole.",150
+Chicken Popcorn,false,true,true,true,"Chicken Popcorn is bite-sized pieces of chicken coated in breadcrumbs and deep-fried until crispy, served as a snack or appetizer.",180
+Nalli Nihari,false,true,true,true,"Nalli Nihari is a rich and flavorful Indian stew made with slow-cooked lamb shanks in a spicy and aromatic gravy.",300
+Fish Eggs,false,true,true,true,"Fish Eggs, also known as roe, are the eggs of fish, often consumed as a delicacy in various cuisines.",200
+King Fish,true,false,false,true,"King Fish, also known as king mackerel, is a large and flavorful fish prized for its firm flesh and rich flavor.",250
+Banana Chips,true,false,false,false,"Banana Chips are thinly sliced and deep-fried bananas, often seasoned with salt or spices, popular as a snack.",80
+Honey,true,false,true,false,"Honey is a sweet and viscous liquid produced by bees from the nectar of flowers, used as a natural sweetener and ingredient in various dishes.",120
+Chocolate Icecream,false,false,true,false,"Chocolate Ice cream is a frozen dessert made from cream, sugar, and cocoa, offering a rich and indulgent chocolate flavor.",100
+Vanilla Ice cream,false,false,true,false,"Vanilla Ice cream is a classic frozen dessert made from cream, sugar, and vanilla extract, known for its creamy texture and delicate flavor.",90
+Strawberry Icecream,false,false,true,false,"Strawberry Ice cream is a frozen dessert made from cream, sugar, and strawberry puree, offering a refreshing and fruity flavor.",110
+Rasmalai,false,false,true,false,"Rasmalai is a popular Indian dessert made from soft paneer dumplings soaked in sweetened, thickened milk flavored with cardamom and saffron.",120
+Chocolate milk,true,false,false,false,"Chocolate milk is a sweetened dairy beverage made with milk and cocoa powder or chocolate syrup, offering a rich chocolate flavor.",80
+Kheer,false,false,true,false,"Kheer is a creamy Indian rice pudding made with rice, milk, sugar, and flavored with cardamom, saffron, and nuts.",150
