@@ -189,3 +189,6 @@ INSERT INTO feedback VALUES ('John Doe','testimonal1@gmail.com','Food Critic','F
 ('Emily Davis','testimonal4@gmail.com','Food Blogger','Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!');
 
 SELECT * FROM feedback;
+
+-- Query to check table connectivity
+SELECT DISTINCT user_name FROM bill,cart,bill WHERE bill.cart_id = cart.cart_id AND cart.user_id = users.user_id;
