@@ -230,6 +230,10 @@
 }
 
 
+.service-item p {
+    color: #888; 
+}
+
 /*** Food Menu ***/
 .nav-pills .nav-item .active {
     border-bottom: 2px solid var(--primary);

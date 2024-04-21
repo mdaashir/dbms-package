@@ -185,6 +185,7 @@ document.querySelectorAll('#menu-item-form-1, #menu-item-form-2, #menu-item-form
         });
     });
 
+    // On close goes to index.html
     document.getElementById("closeModalBtn").addEventListener("click", function() {
         window.location.href = "index.html";
     });
