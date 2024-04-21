@@ -35,7 +35,7 @@ CREATE TABLE users (
     phone_number CHAR(10) NOT NULL DEFAULT '0000000000',
     email_id VARCHAR(30) NOT NULL DEFAULT 'name@email.com',
     password_hash VARCHAR(60) NOT NULL UNIQUE,
-    role VARCHAR(5) NOT NULL DEFAULT 'user';
+    role VARCHAR(5) NOT NULL DEFAULT 'user'
 );
 
 -- Trigger function to hash password
@@ -64,20 +64,16 @@ VALUES ('admin', '0000000000', 'admin@gmail.com','admin', 'admin');
 
 select * from users;
 
--- sequence variable to create a billno
-CREATE SEQUENCE bill_number_seq START 0104;
-
--- function to return billno
-CREATE OR REPLACE FUNCTION generate_bill_number()
-RETURNS VARCHAR AS $$
-DECLARE
-    next_val INT;
-BEGIN
-    SELECT nextval('bill_number_seq') INTO next_val;
-    RETURN 'b' || next_val;
-END;
-$$ 
-LANGUAGE plpgsql;
+-- cart table
+CREATE TABLE cart(
+	cart_id UUID,
+    user_id UUID REFERENCES users(user_id),
+	food_id SERIAL REFERENCES sample_menu(id),
+	quantity INTEGER DEFAULT 1 NOT NULL,
+	price FLOAT NOT NULL DEFAULT 0,
+	date DATE DEFAULT CURRENT_DATE,
+	time TIME DEFAULT CURRENT_TIME
+);
 
 -- Trigger function to calculate the price
 CREATE OR REPLACE FUNCTION calculate_price()
@@ -113,16 +109,6 @@ BEFORE INSERT ON cart
 FOR EACH ROW
 EXECUTE FUNCTION before_insert_cart();
 
-CREATE TABLE cart(
-	cart_id UUID,
-    user_id UUID REFERENCES users(user_id),
-	food_id SERIAL REFERENCES sample_menu(id),
-	quantity INTEGER DEFAULT 1 NOT NULL,
-	price FLOAT NOT NULL DEFAULT 0,
-	date DATE DEFAULT CURRENT_DATE,
-	time TIME DEFAULT CURRENT_TIME
-);
-
 -- sample data
 INSERT INTO cart (user_id, food_id, quantity)
 VALUES
@@ -141,6 +127,21 @@ CREATE TABLE bill(
     date DATE DEFAULT CURRENT_DATE,
     by_user VARCHAR(30) REFERENCES users(user_name)
 );
+
+-- sequence variable to create a billno
+CREATE SEQUENCE bill_number_seq START 0104;
+
+-- function to return billno
+CREATE OR REPLACE FUNCTION generate_bill_number()
+RETURNS VARCHAR AS $$
+DECLARE
+    next_val INT;
+BEGIN
+    SELECT nextval('bill_number_seq') INTO next_val;
+    RETURN 'b' || next_val;
+END;
+$$ 
+LANGUAGE plpgsql;
 
 -- Trigger function to calculate the bill
 CREATE OR REPLACE FUNCTION calculate_bill()
@@ -172,3 +173,19 @@ EXECUTE FUNCTION calculate_bill();
 INSERT INTO BILL(user_id) VALUES('4fb66535-b174-47fc-8600-dcec26085afc');
 
 SELECT * FROM bill;
+
+-- table for feedback
+CREATE TABLE feedback(
+    user_name VARCHAR(30) NOT NULL,
+    email_id VARCHAR(30) NOT NULL,
+	profession VARCHAR(50),
+	messages VARCHAR(150)
+);
+
+-- sample data
+INSERT INTO feedback VALUES ('John Doe','testimonal1@gmail.com','Food Critic','Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!'),
+('Jane Smith','testimonal2@gmail.com','Business Owner','Ive been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!'),
+('David Johnson','testimonal3@gmail.com','Event Planner','The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!'),
+('Emily Davis','testimonal4@gmail.com','Food Blogger','Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!');
+
+SELECT * FROM feedback;
