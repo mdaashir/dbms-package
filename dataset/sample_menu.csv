@@ -1,4 +1,3 @@
-food_items,is_breakfast,is_lunch,is_dinner,is_veg,description,price
 Aloo Tikki,false,true,true,false,"Aloo Tikki is a popular Indian snack made with mashed potatoes and spices, deep-fried until crispy.",50
 Kadhi,true,false,false,false,"Kadhi is a yogurt-based curry with gram flour dumplings, flavored with spices like fenugreek and cumin.",100
 Bananas,true,false,false,false,"Bananas are a nutritious fruit rich in potassium, fiber, and various vitamins.",20
