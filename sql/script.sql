@@ -35,7 +35,7 @@ CREATE TABLE users (
     phone_number CHAR(10) NOT NULL DEFAULT '0000000000',
     email_id VARCHAR(30) NOT NULL DEFAULT 'name@email.com',
     password_hash VARCHAR(60) NOT NULL UNIQUE,
-    role VARCHAR(20) NOT NULL DEFAULT 'user';
+    role VARCHAR(5) NOT NULL DEFAULT 'user';
 );
 
 -- Trigger function to hash password
@@ -59,5 +59,116 @@ INSERT INTO users (user_name, phone_number, email_id, password_hash)
 VALUES ('user', '1234567890', 'user@gmail.com','user');
 INSERT INTO users (user_name, phone_number, email_id, password_hash) 
 VALUES ('pass', '0987654321', 'pass@gmail.com','pass');
+INSERT INTO users (user_name, phone_number, email_id, password_hash, role) 
+VALUES ('admin', '0000000000', 'admin@gmail.com','admin', 'admin');
 
 select * from users;
+
+-- sequence variable to create a billno
+CREATE SEQUENCE bill_number_seq START 0104;
+
+-- function to return billno
+CREATE OR REPLACE FUNCTION generate_bill_number()
+RETURNS VARCHAR AS $$
+DECLARE
+    next_val INT;
+BEGIN
+    SELECT nextval('bill_number_seq') INTO next_val;
+    RETURN 'b' || next_val;
+END;
+$$ 
+LANGUAGE plpgsql;
+
+-- Trigger function to calculate the price
+CREATE OR REPLACE FUNCTION calculate_price()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Calculate the price based on the food_item_id and quantity
+    SELECT (price * NEW.quantity) INTO NEW.price
+    FROM sample_menu
+    WHERE id = NEW.food_id;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger to calculate the price
+CREATE TRIGGER calculate_price_trigger
+BEFORE INSERT ON cart
+FOR EACH ROW
+EXECUTE FUNCTION calculate_price();
+
+-- Trigger function to generate cart id
+CREATE OR REPLACE FUNCTION before_insert_cart()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.cart_id := MD5(NEW.user_id || NEW.date::TEXT);
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+--Trigger to cart id
+CREATE TRIGGER trigger_before_insert_cart
+BEFORE INSERT ON cart
+FOR EACH ROW
+EXECUTE FUNCTION before_insert_cart();
+
+CREATE TABLE cart(
+	cart_id UUID,
+    user_id UUID REFERENCES users(user_id),
+	food_id SERIAL REFERENCES sample_menu(id),
+	quantity INTEGER DEFAULT 1 NOT NULL,
+	price FLOAT NOT NULL DEFAULT 0,
+	date DATE DEFAULT CURRENT_DATE,
+	time TIME DEFAULT CURRENT_TIME
+);
+
+-- sample data
+INSERT INTO cart (user_id, food_id, quantity)
+VALUES
+    ('4fb66535-b174-47fc-8600-dcec26085afc', 1, 2),  
+    ('4fb66535-b174-47fc-8600-dcec26085afc', 3, 1),  
+    ('4fb66535-b174-47fc-8600-dcec26085afc', 2, 3); 
+
+select * from cart;
+
+-- table for bill
+CREATE TABLE bill(
+    bill_number VARCHAR(8) PRIMARY KEY DEFAULT generate_bill_number(),
+	cart_id UUID,
+    user_id UUID REFERENCES users(user_id),
+    total_price FLOAT NOT NULL DEFAULT 0,
+    date DATE DEFAULT CURRENT_DATE,
+    by_user VARCHAR(30) REFERENCES users(user_name)
+);
+
+-- Trigger function to calculate the bill
+CREATE OR REPLACE FUNCTION calculate_bill()
+RETURNS TRIGGER AS $$
+BEGIN
+    SELECT SUM(price) INTO NEW.total_price
+    FROM cart
+    WHERE cart.user_id = NEW.user_id AND cart.date = NEW.date;
+
+	SELECT role INTO NEW.by_user
+    FROM users
+    WHERE users.user_id = NEW.user_id;
+
+	SELECT DISTINCT cart_id INTO NEW.cart_id
+	FROM cart
+	WHERE cart.user_id = NEW.user_id AND cart.date = NEW.date;
+	
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+--Trigger to bill
+CREATE TRIGGER trigger_bil
+BEFORE INSERT ON bill
+FOR EACH ROW
+EXECUTE FUNCTION calculate_bill();
+
+--sample data
+INSERT INTO BILL(user_id) VALUES('4fb66535-b174-47fc-8600-dcec26085afc');
+
+SELECT * FROM bill;
