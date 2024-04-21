@@ -185,8 +185,8 @@ document.querySelectorAll('#menu-item-form-1, #menu-item-form-2, #menu-item-form
         });
     });
 
-    document.querySelector('#orderPlacedModal button[data-bs-dismiss="modal"]').addEventListener('click', function() {
-        window.location.href = 'index.html';
+    document.getElementById("closeModalBtn").addEventListener("click", function() {
+        window.location.href = "index.html";
     });
     
     // Call the function when the modal is shown
