@@ -95,134 +95,86 @@
         <!-- Navbar & Hero End -->
 
         <!-- Booking Start -->
-        <button class="btn btn-primary w-100 py-3" type="submit">BOOK NOW</button>
-<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <button class="btn btn-primary w-100 py-3" type="submit">BOOK NOW</button>
+    <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
     <div class="row g-0 justify-content-center">
         <div class="col-md-6 bg-dark d-flex align-items-center">
             <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="text-center"> <!-- Wrap the h5 in a div with text-center class -->
-                    <h5 class="section-title ff-secondary text-primary fw-normal">Booking</h5>
+                    <h5 class="section-title ff-secondary text-primary fw-normal">Your Cart</h5>
                 </div>
                 <h1 class="text-white mb-4 text-center">ORDER NOW Online</h1>
-                <form>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
-                            </div>
+              
+                
+                <!-- CART DIV START -->
+                <div class="row g-3">
+
+                    <div class="col-md-6 ">
+                        <div class="form-floating">
+                            <div type="bill" class="form-control" id="bill" placeholder="Bill No">Print Bill Number</div>
+                            <label for="bill">Bill no</label>
+                        </div>  
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                            <label for="datetime">Date & Time</label>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                <label for="email">Your Email</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                <label for="datetime">Date & Time</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <select class="form-select" id="select1">
-                                  <option value="1">type 1</option>
-                                  <option value="2">type 2</option>
-                                  <option value="3">type 3</option>
-                                </select>
-                                <label for="select1">Select Type</label>
-                              </div>
-                        </div>
-                        
-                        <!-- MENU SELECT for adding to cart
-                        <div class="col-md-6" id="menu_select_container">
-                            <div class="form-floating">
-                                <select class="form-select" id="menu_type_1">
-                                  -- Menus for type 1 will be added here dynamically 
-                                </select>
-                                <label for="menu_type_1">Select Menu (Type 1)</label>
-                              </div>
-                              <br>
-                              <div class="form-floating">
-                                <select class="form-select" id="menu_type_2">
-                                  <!-- Menus for type 2 will be added here dynamically 
-                                </select>
-                                <label for="menu_type_1">Select Menu (Type 2)</label>
-                              </div>
-                              <br>
-                              <div class="form-floating">
-                                <select class="form-select" id="menu_type_3">
-                                  <!-- Menus for type 3 will be added here dynamically 
-                                </select>
-                                <label for="menu_type_3">Select Menu (Type 3)</label>
-                              </div>
-                            <!-- Menu select list will be added here 
-                       
-                            FOR DISPLAYING MENU
-
-                                <?php
-                                // Connect to the database
-                                $conn = pg_connect("host=localhost dbname=mydatabase user=myuser password=mypassword");
-
-                                // Get the selected type from the AJAX request
-                                $type = $_POST['type'];
-
-                                // Fetch the menus for the selected type from the database
-                                $query = "SELECT * FROM menus WHERE type = $1";
-                                $result = pg_query_params($conn, $query, array($type));
-
-                                // Generate the HTML for the new dropdown
-                                $html = '<option value="">Select Menu</option>';
-                                while ($row = pg_fetch_assoc($result)) {
-                                $html .= '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
-                                }
-
-                                // Return the HTML to the AJAX request
-                                echo $html;
-                                ?>
-                                </div> 
-                            -->
-                        
+                    </div>  
                     
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                        <label for="message">Special Request</label>
+                    </div>
+                    <!--CART PRINT -->
+                    <div class="col-12">
+                        <div class="placeholder">
+                            <div class="placeholder-title">Item Details</div>
+                            <div class="placeholder-content" id="itemDetails">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Sno</th>
+                                            <th>Item</th>
+                                            <th>Qty</th>
+                                            <th>Price</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <!-- ITEM 1 -->
+                                        <tr>
+                                            <td>1</td>          <!-- S.NO -->
+                                            <td>Item A</td>     <!-- Name -->
+                                            <td> 
+                                                <button class="btn btn-sm btn-primary decrease">-</button>
+                                                <span class="quantity">2</span>     <!--Print the quantity after every change-->
+                                                <button class="btn btn-sm btn-primary increase">+</button>
+                                            </td>         <!-- Qty -->
+                                            <td>$10</td>        <!-- Price -->
+                                            <td>
+                                                <button class="btn btn-sm btn-danger delete">Delete</button>
+                                            </td>
+                                        </tr>
 
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                <label for="message">Special Request</label>
+                                        <!-- Add more <tr> for each item in the cart -->
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
-                       
-                        <!-- ADD ORDER ON CLICK
-                            <?php
-                                // Connect to the database
-                                $conn = pg_connect("host=localhost dbname=mydatabase user=myuser password=mypassword");
-
-                                // Get the form data from the AJAX request
-                                $email = $_POST['email'];
-                                $datetime = $_POST['datetime'];
-                                $type = $_POST['type'];
-                                $message = $_POST['message'];
-
-                                // Add the new item to the database
-                                $query = "INSERT INTO bookings (email, datetime, type, message) VALUES ($1, $2, $3, $4)";
-                                pg_query_params($conn, $query, array($email, $datetime, $type, $message));
-
-                                // Get the ID of the new item
-                                $id = pg_last_oid($conn);
-
-                                // Return the ID to the AJAX request
-                                echo $id;
-                                ?> -->
-                        <div class="col-12">
-                                    <a href="menu.html" class="btn btn-primary py-2 px-4">ADD ITEM TO CART</a>
-                        </div>
-                        <div class="col-12">
-                            <a href="checkout.html" class="btn btn-primary py-2 px-4">GO TO CHECKOUT</a>
-                        </div>
                         </div>
                     </div>
-                </form>
+                    <!-- CART PRINT END -->
+                    <div class="col-md-6">
+                        <a href="menu.html" class="btn btn-primary py-2 px-4">GO BACK TO MENU</a>
+                    </div>
+
+                    <div class="col-md-6">
+                        <a href="checkout.html" class="btn btn-primary py-2 px-4">PROCEED TO CHECKOUT</a>
+                    </div>
+                </div>
+                <!-- END OF CART DIV -->
+
             </div>
         </div>
     </div>

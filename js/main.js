@@ -176,3 +176,12 @@ document.querySelectorAll('#menu-item-form-1, #menu-item-form-2, #menu-item-form
     });
     document.querySelector('#cart-total').textContent = `$${total.toFixed(2)}`;
   }
+
+  
+    document.addEventListener('DOMContentLoaded', function() {
+        const confirmCheckoutButton = document.querySelector('#confirmCheckoutButton');
+        confirmCheckoutButton.addEventListener('click', function() {
+            $('#orderPlacedModal').modal('show');
+        });
+    });
+
