@@ -34,7 +34,8 @@ CREATE TABLE users (
     user_name VARCHAR(30) NOT NULL UNIQUE,
     phone_number CHAR(10) NOT NULL DEFAULT '0000000000',
     email_id VARCHAR(30) NOT NULL DEFAULT 'name@email.com',
-    password_hash VARCHAR(60) NOT NULL UNIQUE
+    password_hash VARCHAR(60) NOT NULL UNIQUE,
+    role VARCHAR(20) NOT NULL DEFAULT 'user';
 );
 
 -- Trigger function to hash password
