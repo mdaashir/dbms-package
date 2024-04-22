@@ -159,6 +159,7 @@ $feedback_query = pg_query($conn, "SELECT * FROM feedback");
                 <th>Email ID</th>
                 <th>Profession</th>
                 <th>Message</th>
+                <th>Picture</th>
             </tr>
             <?php while ($row = pg_fetch_assoc($feedback_query)) { ?>
                 <tr>
@@ -166,6 +167,7 @@ $feedback_query = pg_query($conn, "SELECT * FROM feedback");
                     <td><?php echo $row['email_id']; ?></td>
                     <td><?php echo $row['profession']; ?></td>
                     <td><?php echo $row['messages']; ?></td>
+                    <td><?php echo $row['picture']; ?></td>
                 </tr>
             <?php } ?>
         </table>
