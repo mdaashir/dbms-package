@@ -214,3 +214,6 @@ $$LANGUAGE plpgsql;
 
 -- Query to check table connectivity
 SELECT DISTINCT user_name FROM bill,cart,users WHERE bill.cart_id = cart.cart_id AND cart.user_id = users.user_id;
+
+
+SELECT * FROM bill,cart,users WHERE bill.cart_id = cart.cart_id AND cart.user_id = users.user_id;
