@@ -2,6 +2,7 @@
 
 <?php
 session_start();
+$menu_query = pg_query($conn, "SELECT * FROM sample_menu");
 ?>
 
 <!DOCTYPE html>
@@ -159,58 +160,76 @@ session_start();
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                     <!-- ITEM BEGIN                            -->
+                                <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src=<?php echo $row['picture']; ?> alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span><?php echo $row['food_items']; ?></span>
+                                                <span class="text-primary">$<?php echo $row['price']; ?></span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic"><?php echo $row['description']; ?></small>
+                                            <form id="menu-item-form-1" class="d-flex mt-3">
+                                                <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
+                                                <button type="submit" class="btn btn-primary">+</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                <?php } ?>
                                 <!-- ITEM END -->
                             </div>
                         </div>
                          <!-- TAB 1 END -->
                         <!-- TAB 2 -->
-                        <div id="tab-2" class="tab-pane fade show p-0">
+                        <div id="tab-2" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <!-- ITEM START -->
+                                <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src=<?php echo $row['picture']; ?> alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span><?php echo $row['food_items']; ?></span>
+                                                <span class="text-primary">$<?php echo $row['price']; ?></span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic"><?php echo $row['description']; ?></small>
+                                            <form id="menu-item-form-1" class="d-flex mt-3">
+                                                <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
+                                                <button type="submit" class="btn btn-primary">+</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                <?php } ?>
                                 <!-- ITEMS END  -->
                             </div>
                         </div>
                         <!-- TAB 2 END -->
                         <!-- TAB 3 -->
-                        <div id="tab-3" class="tab-pane fade show p-0">
+                        <div id="tab-3" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <!-- ITEM 1 -->
+                                <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src=<?php echo $row['picture']; ?> alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
+                                                <span><?php echo $row['food_items']; ?></span>
+                                                <span class="text-primary">$<?php echo $row['price']; ?></span>
                                             </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <small class="fst-italic"><?php echo $row['description']; ?></small>
+                                            <form id="menu-item-form-1" class="d-flex mt-3">
+                                                <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
+                                                <button type="submit" class="btn btn-primary">+</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                <?php } ?>
                                 <!-- ITEMS END -->
                             </div>
                         </div>
