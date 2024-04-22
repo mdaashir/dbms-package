@@ -19,7 +19,7 @@ function insertIntoFeedback($conn) {
         $result = pg_query($conn, $insert_query);
         if ($result) {
             // echo "<script>alert('Data inserted successfully');</script>";
-            header("Location: index.php");            
+            header("Location: testimonial.php");            
         } else {
             echo "<script>alert('Error inserting data');</script>";
         }

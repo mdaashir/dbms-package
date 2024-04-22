@@ -184,10 +184,7 @@ insertIntoUsers($conn);
                                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
                                     <label for="confirmPassword">Confirm Password</label>
                                 </div>
-                                <div class="form-floating mb-4" <?php if($_SESSION['role'] !== 'admin') echo 'style="display: none;"'; ?>>
-                                    <input type="text" class="form-control" id="role" name="role" placeholder="role">
-                                    <label for="role">Role</label>
-                                </div>
+                              
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary btn-lg" name="submit_user" type="submit">Register</button>
                                 </div>
