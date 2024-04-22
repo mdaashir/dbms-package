@@ -542,8 +542,9 @@
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="menu.php">See More</a>
             </div>
-            <a class="btn btn-primary py-3 px-5 mt-2" href="menu.php">See More</a>
+            <!-- <a class="btn btn-primary py-3 px-5 mt-2" href="menu.php">See More</a> -->
         </div>
         <!-- Menu End -->
 
