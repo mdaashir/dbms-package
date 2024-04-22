@@ -192,4 +192,4 @@ INSERT INTO feedback VALUES ('John Doe','testimonal1@gmail.com','Food Critic','F
 SELECT * FROM feedback;
 
 -- Query to check table connectivity
-SELECT DISTINCT user_name FROM bill,cart,bill WHERE bill.cart_id = cart.cart_id AND cart.user_id = users.user_id;
+SELECT DISTINCT user_name FROM bill,cart,users WHERE bill.cart_id = cart.cart_id AND cart.user_id = users.user_id;
