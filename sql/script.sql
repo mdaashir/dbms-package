@@ -179,14 +179,15 @@ CREATE TABLE feedback(
     user_name VARCHAR(30) NOT NULL,
     email_id VARCHAR(30) NOT NULL,
 	profession VARCHAR(50),
-	messages VARCHAR(150)
+	messages VARCHAR(150),
+    picture TEXT DEFAULT 'img/user.png'
 );
 
 -- sample data
-INSERT INTO feedback VALUES ('John Doe','testimonal1@gmail.com','Food Critic','Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!'),
-('Jane Smith','testimonal2@gmail.com','Business Owner','Ive been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!'),
-('David Johnson','testimonal3@gmail.com','Event Planner','The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!'),
-('Emily Davis','testimonal4@gmail.com','Food Blogger','Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!');
+INSERT INTO feedback VALUES ('John Doe','testimonal1@gmail.com','Food Critic','Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!','img/testimonial-1.jpg'),
+('Jane Smith','testimonal2@gmail.com','Business Owner','Ive been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!','img/testimonial-2.jpg'),
+('David Johnson','testimonal3@gmail.com','Event Planner','The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!','img/testimonial-3.jpg'),
+('Emily Davis','testimonal4@gmail.com','Food Blogger','Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!','img/testimonial-4.jpg');
 
 SELECT * FROM feedback;
 
