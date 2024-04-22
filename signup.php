@@ -45,8 +45,8 @@ function insertIntoUsers($conn) {
 
         $result = pg_query($conn, $insert_query);
         if ($result) {
-            echo "<script>alert('Data inserted successfully');</script>";
-            // header("Location: index.php");
+            // echo "<script>alert('Data inserted successfully');</script>";
+            header("Location: index.php");
         } else {
             echo "<script>alert('Error inserting data');</script>";
         }
