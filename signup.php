@@ -1,5 +1,12 @@
-<?php include ( "inc/connect.inc.php" ); ?>
+<?php include("inc/connect.inc.php"); ?>
 <?php
+
+session_start();
+if (!isset($_SESSION['username']) || $_SESSION['role'] === 'admin') {
+}
+else {
+	header("location: index.php");
+}
 
 function insertIntoUsers($conn) {
     if (isset($_POST['submit_user'])) {
@@ -7,7 +14,7 @@ function insertIntoUsers($conn) {
         $phone_or_email = $_POST['email'];
         $password_hash = $_POST['confirmPassword'];
         $password = $_POST['password'];
-        $role = isset($_POST['role']) ? $_POST['role'] : ''; // Check if role is set
+        $role = isset($_POST['role']) ? $_POST['role'] : '';
 
         if (empty($user_name) || empty($phone_or_email) || empty($password_hash) || empty($password)) {
             echo "<script>alert('Please fill out all fields.');</script>";
@@ -19,10 +26,8 @@ function insertIntoUsers($conn) {
             return;
         }
 
-        // Construct the SQL query
         $insert_query = "INSERT INTO users (user_name, ";
 
-        // Check if the input is a valid email
         if (filter_var($phone_or_email, FILTER_VALIDATE_EMAIL)) {
             $insert_query .= "email_id";
         } else {
@@ -46,6 +51,8 @@ function insertIntoUsers($conn) {
         $result = pg_query($conn, $insert_query);
         if ($result) {
             // echo "<script>alert('Data inserted successfully');</script>";
+            $_SESSION['username'] = $user_name;
+            $_SESSION['role'] = $role;
             header("Location: index.php");
         } else {
             echo "<script>alert('Error inserting data');</script>";
@@ -54,7 +61,6 @@ function insertIntoUsers($conn) {
 }
 
 insertIntoUsers($conn);
-
 ?>
 
 <!DOCTYPE html>
@@ -177,6 +183,10 @@ insertIntoUsers($conn);
                                 <div class="form-floating mb-4">
                                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
                                     <label for="confirmPassword">Confirm Password</label>
+                                </div>
+                                <div class="form-floating mb-4" <?php if($_SESSION['role'] !== 'admin') echo 'style="display: none;"'; ?>>
+                                    <input type="text" class="form-control" id="role" name="role" placeholder="role">
+                                    <label for="role">Role</label>
                                 </div>
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary btn-lg" name="submit_user" type="submit">Register</button>
