@@ -178,12 +178,6 @@ $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
                                                 <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
                                                 <button type="submit" class="btn btn-primary">+</button>
                                             </form>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
-                                            <form id="menu-item-form-1" class="d-flex mt-3">
-                                                <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
-                                                <button type="submit" class="btn btn-primary">+</button>
-                                            </form>
-
                                         </div>
                                     </div>
                                 </div>
