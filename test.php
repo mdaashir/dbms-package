@@ -1,4 +1,5 @@
 <?php include ( "inc/connect.inc.php" ); ?>
+
 <?php
 // Fetch data from sample_menu table
 $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
@@ -55,6 +56,7 @@ $feedback_query = pg_query($conn, "SELECT * FROM feedback");
 </head>
 
 <body>
+<button class="btn btn-primary" type="button" onclick="location.href='index.php'">Back to Home</button>
     <div class="container">
         <h2>Sample Menu</h2>
         <table>
@@ -167,7 +169,7 @@ $feedback_query = pg_query($conn, "SELECT * FROM feedback");
                     <td><?php echo $row['email_id']; ?></td>
                     <td><?php echo $row['profession']; ?></td>
                     <td><?php echo $row['messages']; ?></td>
-                    <td><?php echo $row['picture']; ?></td>
+                    <td><img src="<?php echo $row['picture']; ?>" alt="Menu Item" width="50" height="50"></td>
                 </tr>
             <?php } ?>
         </table>
@@ -176,7 +178,4 @@ $feedback_query = pg_query($conn, "SELECT * FROM feedback");
 
 </html>
 
-<?php
-// Close connection
-pg_close($conn);
-?>
+<?php pg_close($conn); ?>

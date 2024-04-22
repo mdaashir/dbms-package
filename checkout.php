@@ -59,20 +59,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <a href="index.php" class="nav-item nav-link">Home</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
+                        <a href="service.php" class="nav-item nav-link">Service</a>
+                        <a href="menu.php" class="nav-item nav-link">Menu</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="booking.html" class="dropdown-item active">Booking</a>
-				<a href="checkout.html" class="dropdown-item">Your Orders</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="booking.php" class="dropdown-item active">Booking</a>
+				<a href="checkout.php" class="dropdown-item">Your Orders</a>
+                                <a href="team.php" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="" class="btn btn-primary py-2 px-4">ORDER NOW</a>
                 </div>
@@ -83,8 +83,8 @@
                     <h1 class="display-3 text-white mb-3 animated slideInDown">Checkout</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a href="booking.html">Booking</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                            <li class="breadcrumb-item"><a href="booking.php">Booking</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Checkout</li>
                         </ol>
                     </nav>
@@ -169,7 +169,7 @@
                                 <button class="btn btn-primary w-100 py-3" type="submit">Confirm Checkout</button>
                             </div>
                             <div class="col-12">
-                                <a href="menu.html" class="btn btn-primary py-2 px-4">Go To Cart</a>
+                                <a href="menu.php" class="btn btn-primary py-2 px-4">Go To Cart</a>
                             </div>
                             
                         </div>

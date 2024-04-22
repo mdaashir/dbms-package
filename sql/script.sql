@@ -191,5 +191,26 @@ INSERT INTO feedback VALUES ('John Doe','testimonal1@gmail.com','Food Critic','F
 
 SELECT * FROM feedback;
 
+CREATE OR REPLACE PROCEDURE update_menu(IN food_id INTEGER,IN food_price FLOAT)
+AS $$
+BEGIN
+	UPDATE sample_menu SET price = food_price WHERE id = food_id;
+END;
+$$LANGUAGE plpgsql;
+
+CREATE OR REPLACE PROCEDURE delete_menu(IN food_id INTEGER)
+AS $$
+BEGIN
+	DELETE FROM sample_menu WHERE id = food_id;
+END;
+$$LANGUAGE plpgsql;
+
+CREATE OR REPLACE PROCEDURE insert_menu(IN food_name VARCHAR(30),IN breakfast BOOLEAN,IN lunch BOOLEAN,IN dinner BOOLEAN,IN veg BOOLEAN,IN descp VARCHAR(150),IN food_price FLOAT)
+AS $$
+BEGIN
+	INSERT INTO sample_menu (food_items, is_breakfast, is_lunch, is_dinner, is_veg, description, price) VALUES (food_name, breakfast, lunch, dinner, veg, descp, food_price);
+END;
+$$LANGUAGE plpgsql;
+
 -- Query to check table connectivity
 SELECT DISTINCT user_name FROM bill,cart,users WHERE bill.cart_id = cart.cart_id AND cart.user_id = users.user_id;

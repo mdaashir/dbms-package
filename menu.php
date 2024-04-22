@@ -120,11 +120,11 @@ $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
         </div>
         <!-- End of Search bar -->
 
-        <!-- <div>  ADMIN FUNCTIONALITIES
-            <button class="btn btn-primary" type="button">Add</button>
-            <button class="btn btn-primary" type="button">Edit</button>
-            <button class="btn btn-primary" type="button">Delete</button>
-        </div> -->
+         <div>  <!-- ADMIN FUNCTIONALITIES -->
+            <button class="btn btn-primary" type="button" onclick="location.href='try.php'">Add</button>
+            <button class="btn btn-primary" type="button" onclick="location.href='try.php'">Edit</button>
+            <button class="btn btn-primary" type="button" onclick="location.href='try.php'">Delete</button>
+        </div>
                 <!-- 3 NAV TABS -->
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
