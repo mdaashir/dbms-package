@@ -118,12 +118,13 @@ session_start();
             </div>
         </div>
         <!-- End of Search bar -->
+
         <!-- <div>  ADMIN FUNCTIONALITIES
             <button class="btn btn-primary" type="button">Add</button>
             <button class="btn btn-primary" type="button">Edit</button>
             <button class="btn btn-primary" type="button">Delete</button>
         </div> -->
-
+                <!-- 3 NAV TABS -->
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                         <li class="nav-item">
@@ -154,20 +155,26 @@ session_start();
                             </a>
                         </li>
                     </ul>
+                    <!--  NAV TABS ENDS -->
                     <div class="tab-content">
                         <!-- TAB 1 -->
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
-                                    <!-- ITEM BEGIN                            -->
+                                <!-- ITEM BEGIN                            -->
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.png" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                            <form id="menu-item-form-1" class="d-flex mt-3">
+                                                <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
+                                                <button type="submit" class="btn btn-primary">+</button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
