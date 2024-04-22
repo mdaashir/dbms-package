@@ -1,19 +1,25 @@
+<?php include ( "inc/connect.inc.php" ); ?>
+
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Foodzy-HOME</title>
+    <title>Foodzy-MENU </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
 	<!-- Favicon -->
-	<link href="img/restaurant/favicon.ico" rel="icon">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/restaurant/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/restaurant/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/restaurant/favicon-16x16.png">
-	<link rel="manifest" href="img/restaurant/site.webmanifest">
+	<link href="img/menu/favicon.ico" rel="icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/menu/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/menu/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/menu/favicon-16x16.png">
+	<link rel="manifest" href="img/menu/site.webmanifest">
 
 
     <!-- Google Web Fonts -->
@@ -60,146 +66,39 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <a href="index.php" class="nav-item nav-link">Home</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
+                        <a href="service.php" class="nav-item nav-link">Service</a>
+                        <a href="menu.php" class="nav-item nav-link active">Menu</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="booking.html" class="dropdown-item">Booking</a>
-				                <a href="checkout.html" class="dropdown-item">Your Orders</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="booking.php" class="dropdown-item">Booking</a>
+                                <a href="checkout.php" class="dropdown-item">Your Orders</a>
+                                <a href="team.php" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="booking.html" class="btn btn-primary py-2 px-4">ORDER NOW</a>&nbsp;&nbsp;
-                    <a href="login.html" class="btn btn-primary py-2 px-4">LOGIN/SIGNUP</a>
-                    <!-- <a href="#" class="btn btn-primary py-2 px-4" style="color: red;">LOGOUT</a> -->
-
+                    <a href="checkout.php" class="btn btn-primary py-2 px-4">PLACE ORDER </a>
                 </div>
             </nav>
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
-                <div class="container my-5 py-5">
-                    <div class="row align-items-center g-5">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <!--ADD THIS AFTER USER LOGIN/SIGNUP <h3 class="display-3 text-white animated slideInLeft" >Hi Username !</h3> -->
-                           
-                            <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
-                            <!-- <p class="text-white animated slideInLeft mb-4 pb-2">Welcome to FOODZY :)</p> -->
-                            <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">ORDER NOW</a> -->
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                            <img class="img-fluid" src="img/heroo.png" alt="" width="70%">
-                        </div>
-                    </div>
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Food Menu</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Menu</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
         <!-- Navbar & Hero End -->
-
-
-        <!-- Service Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                        <h5>Experienced Chefs</h5>
-                        <p>Our master chefs bring years of experience and expertise to create culinary delights that satisfy your taste buds.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                        <h5>Quality Ingredients</h5>
-                        <p>We use only the finest and freshest ingredients to ensure that every dish we serve is of the highest quality and taste.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-                        <h5>Convenient Online Ordering</h5>
-                        <p>Enjoy the convenience of placing your order online from the comfort of your home or on the go, and have it delivered to your doorstep.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                        <h5>24/7 Customer Support</h5>
-                        <p>Our dedicated customer support team is available round-the-clock to assist you with any inquiries or concerns you may have.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Service End -->
-
-
-<!-- About Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-                <div class="row g-3">
-                    <div class="col-6 text-start">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg">
-                    </div>
-                    <div class="col-6 text-start">
-                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;">
-                    </div>
-                    <div class="col-6 text-end">
-                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
-                    </div>
-                    <div class="col-6 text-end">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                <h1 class="mb-4">Welcome to <i class="fa fa-utensils text-primary me-2"></i>Foodzy</h1>
-                <p class="mb-4">We welcome you to Foodzy, where culinary excellence meets exceptional service. Our passion for food is matched only by our commitment to delivering an unforgettable dining experience to every guest.</p>
-                <p class="mb-4">At Foodzy, we believe in using the freshest ingredients, innovative cooking techniques, and meticulous attention to detail to create dishes that delight the senses and leave a lasting impression.</p>
-                <div class="row g-4 mb-4">
-                    <div class="col-sm-6">
-                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">10</h1>
-                            <div class="ps-4">
-                                <p class="mb-0">Years of</p>
-                                <h6 class="text-uppercase mb-0">Experience</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">30</h1>
-                            <div class="ps-4">
-                                <p class="mb-0">Dedicated</p>
-                                <h6 class="text-uppercase mb-0">Master Chefs</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="about.html">Read More</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- About End -->
-
 
 
         <!-- Menu Start -->
@@ -209,6 +108,22 @@
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
                     <h1 class="mb-5">Most Popular Items</h1>
                 </div>
+                <!-- Search bar -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search for a dish...">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+        <!-- End of Search bar -->
+        <!-- <div>  ADMIN FUNCTIONALITIES
+            <button class="btn btn-primary" type="button">Add</button>
+            <button class="btn btn-primary" type="button">Edit</button>
+            <button class="btn btn-primary" type="button">Delete</button>
+        </div> -->
+
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                         <li class="nav-item">
@@ -225,7 +140,7 @@
                                 <i class="fa fa-hamburger fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Special</small>
-                                    <h6 class="mt-n1 mb-0">Lunch</h6>
+                                    <h6 class="mt-n1 mb-0">Launch</h6>
                                 </div>
                             </a>
                         </li>
@@ -244,22 +159,28 @@
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
-                                                <span class="text-primary">$115</span>
-                                            </h5>
-                                            <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
-                                        </div>
+                                      <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                                      <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                          <span>Soup</span>
+                                          <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                        <!-- ADDED QUANTITY BUTTON -->
+                                        <form id="menu-item-form-1" class="d-flex mt-3">
+                                          <input type="hidden" name="menu_id" value="1">
+                                          <input type="number" name="quantity" value="1" min="1" class="form-control me-2" style="width: 50px;">
+                                          <button type="submit" class="btn btn-primary">+</button>
+                                        </form>
+                                      </div>
                                     </div>
-                                </div>
+                                  </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
+                                                <span>Pasta</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -271,7 +192,7 @@
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
+                                                <span>Pizza</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -283,7 +204,7 @@
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
+                                                <span>Chicken Pizza</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -295,7 +216,7 @@
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
+                                                <span>Non Veg Meals</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -307,7 +228,7 @@
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
+                                                <span>French Fries</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -319,7 +240,7 @@
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Chicken Burger</span>
+                                                <span>Margharita</span>
                                                 <span class="text-primary">$115</span>
                                             </h5>
                                             <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -542,212 +463,9 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="menu.html">See More</a>
             </div>
-          
         </div>
         <!-- Menu End -->
-
-
-        <!-- Booking Start -->
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/FeNH01zxkwA?si=nSK0ttDllg5gl3IY" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Booking</h5>
-                        <h1 class="text-white mb-4">ORDER NOW Online</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input wide-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" style="width: 100%; " />
-                                        <label for="datetime">Date & Time</label>
-                                    </div>
-                                </div>
-                                
-                               
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Special Request</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <a class="btn btn-primary w-100 py-3" href="menu.html">Book Now</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FeNH01zxkwA?si=nSK0ttDllg5gl3IY" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Booking Stop -->
-
-        <!-- Team Start -->
-<div class="container-xxl pt-5 pb-3">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
-            <h1 class="mb-5">Our Master Chefs</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item text-center rounded overflow-hidden">
-                    <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="img/chef-1.jpg" alt="">
-                    </div>
-                    <h5 class="mb-0">Sanjeev Kapoor</h5>
-                    <small>Head Chef</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item text-center rounded overflow-hidden">
-                    <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="img/chef-2.jpg" alt="">
-                    </div>
-                    <h5 class="mb-0">Venkatesh Bhatt</h5>
-                    <small>Sous Chef</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item text-center rounded overflow-hidden">
-                    <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="img/chef-3.jpg" alt="">
-                    </div>
-                    <h5 class="mb-0">Maneet Chauhan</h5>
-                    <small>Pastry Chef</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item text-center rounded overflow-hidden">
-                    <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="img/team-4.jpg" alt="">
-                    </div>
-                    <h5 class="mb-0">Adams</h5>
-                    <small>Line Cook</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Team End -->
-
-
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="text-center">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonials</h5>
-                    <h1 class="mb-5">What Our Clients Say!!!</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">John Doe</h5>
-                                <small>Food Critic</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>I've been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Jane Smith</h5>
-                                <small>Business Owner</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">David Johnson</h5>
-                                <small>Event Planner</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Emily Davis</h5>
-                                <small>Food Blogger</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
         
 
         <!-- Footer Start -->
@@ -756,9 +474,9 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
-                        <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="contact.html">Contact Us</a>
-                        <a class="btn btn-link" href="booking.html">Booking</a>
+                        <a class="btn btn-link" href="about.php">About Us</a>
+                        <a class="btn btn-link" href="contact.php">Contact Us</a>
+                        <a class="btn btn-link" href="booking.php">Booking</a>
                         <a class="btn btn-link" href="">Privacy Policy</a>
                         <a class="btn btn-link" href="">Terms & Condition</a>
                     </div>
@@ -836,3 +554,4 @@
 </body>
 
 </html>
+<?php pg_close($conn); ?>

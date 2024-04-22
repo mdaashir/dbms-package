@@ -1,3 +1,5 @@
+<?php include ( "inc/connect.inc.php" ); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,25 +62,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <a href="index.php" class="nav-item nav-link active">Home</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
+                        <a href="service.php" class="nav-item nav-link">Service</a>
+                        <a href="menu.php" class="nav-item nav-link">Menu</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="booking.html" class="dropdown-item">Booking</a>
-				                <a href="checkout.html" class="dropdown-item">Your Orders</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="booking.php" class="dropdown-item">Booking</a>
+				                <a href="checkout.php" class="dropdown-item">Your Orders</a>
+                                <a href="team.php" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="booking.html" class="btn btn-primary py-2 px-4">ORDER NOW</a>&nbsp;&nbsp;
-                    <a href="login.html" class="btn btn-primary py-2 px-4">LOGIN/SIGNUP</a>
-                    <!-- <a href="#" class="btn btn-primary py-2 px-4" style="color: red;">LOGOUT</a> -->
-
+                    <a href="booking.php" class="btn btn-primary py-2 px-4">ORDER NOW</a>&nbsp;&nbsp;
+                    <a href="login.php" class="btn btn-primary py-2 px-4">LOGIN/SIGNUP</a>
                 </div>
             </nav>
 
@@ -193,7 +193,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="about.html">Read More</a>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="about.php">Read More</a>
             </div>
         </div>
     </div>
@@ -542,9 +542,8 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="menu.html">See More</a>
             </div>
-          
+            <a class="btn btn-primary py-3 px-5 mt-2" href="menu.php">See More</a>
         </div>
         <!-- Menu End -->
 
@@ -577,14 +576,22 @@
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input wide-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" style="width: 100%; " />
+                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                         <label for="datetime">Date & Time</label>
                                     </div>
                                 </div>
-                                
-                               
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="select1">
+                                          <option value="1">type 1</option>
+                                          <option value="2">type 2</option>
+                                          <option value="3">type 3</option>
+                                        </select>
+                                        <label for="select1">Select Type</label>
+                                      </div>
+                                </div>
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
@@ -592,7 +599,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <a class="btn btn-primary w-100 py-3" href="menu.html">Book Now</a>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
                                 </div>
                             </div>
                         </form>
@@ -756,9 +763,9 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
-                        <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="contact.html">Contact Us</a>
-                        <a class="btn btn-link" href="booking.html">Booking</a>
+                        <a class="btn btn-link" href="about.php">About Us</a>
+                        <a class="btn btn-link" href="contact.php">Contact Us</a>
+                        <a class="btn btn-link" href="booking.php">Booking</a>
                         <a class="btn btn-link" href="">Privacy Policy</a>
                         <a class="btn btn-link" href="">Terms & Condition</a>
                     </div>
@@ -836,3 +843,4 @@
 </body>
 
 </html>
+<?php session_destroy(); pg_close($conn); ?>
