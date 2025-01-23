@@ -1,51 +1,45 @@
 name: PHP Composer
-
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
   schedule:
-  - cron: "0 12 * * 1-5"
+    - cron: '0 12 * * 1-5'
 
 permissions:
   contents: read
 
 jobs:
   build:
-
-    runs-on: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
 
-    - name: Start the server(PYthon)
-      run: composer start
+      - name: Build and deploy to GitHub Pages
+        run: |
+          composer build
+          # Replace the following command with your build command
+          # e.g., npm run build, yarn build, etc.
+          cp -R build/* /path/to/your/github/pages/directory
 
-    - name: Start the serevr(PHP)
-      run: composer start-php
-      if: github.event_name == 'pull'
-
-    - name: Stop the server
-      run: composer stop
-    
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
+      - name: Stop the server
+        run: composer stop
