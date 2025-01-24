@@ -17,26 +17,13 @@
 		"vlucas/phpdotenv": "^5.6"
 	},
 	"scripts": {
-		"start": "php -S localhost:8000"
+		"start": "php -S localhost:8000",
+		"install": "composer install --prefer-dist --no-progress",
+		"install-prod": "composer install --prefer-dist --no-dev --no-progress --optimize-autoloader"
 	},
-	"watch": {
-		"composer_json": {
-			"files": [
-				"composer.json",
-				"composer.lock"
-			],
-			"tasks": [
-				"exec:composer_install"
-			]
-		}
-	},
-	"exec": {
-		"composer_install": {
-			"cmd": "composer self-update && composer install --no-dev",
-			"exitCode": [
-				0,
-				255
-			]
+	"autoload": {
+		"psr-4": {
+			"Foodzy\\": "src/"
 		}
 	}
 }

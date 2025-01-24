@@ -3,7 +3,8 @@
     include("inc/connect.inc.php");
 
     // Function to handle form submission for inserting data
-    function insertData($conn) {
+    function insertData($conn): void
+    {
         // Check if form is submitted
         if(isset($_POST['submit_insert'])) {
             // Retrieve data from form
@@ -28,7 +29,8 @@
     }
 
     // Function to handle form submission for updating data
-    function updateData($conn) {
+    function updateData($conn): void
+    {
         // Check if form is submitted
         if(isset($_POST['submit_update'])) {
             // Retrieve data from form
@@ -47,8 +49,9 @@
         }
     }
 
-        // Function to handle form submission for deleteing data
-        function deleteData($conn) {
+        // Function to handle form submission for deleting data
+        function deleteData($conn): void
+        {
             // Check if form is submitted
             if(isset($_POST['submit_delete'])) {
                 // Retrieve data from form

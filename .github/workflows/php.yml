@@ -2,10 +2,10 @@ name: PHP Composer
 on:
   push:
     branches:
-      - main
+      - production
   pull_request:
     branches:
-      - main
+      - production
   schedule:
     - cron: '0 12 * * 1-5'
 
@@ -33,13 +33,6 @@ jobs:
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-
-      - name: Build and deploy to GitHub Pages
-        run: |
-          composer build
-          # Replace the following command with your build command
-          # e.g., npm run build, yarn build, etc.
-          cp -R build/* /path/to/your/github/pages/directory
 
       - name: Stop the server
         run: composer stop

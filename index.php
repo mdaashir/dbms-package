@@ -87,7 +87,6 @@
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
                             <!--ADD THIS AFTER USER LOGIN/SIGNUP <h3 class="display-3 text-white animated slideInLeft" >Hi Username !</h3> -->
-                           
                             <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
                             <!-- <p class="text-white animated slideInLeft mb-4 pb-2">Welcome to FOODZY :)</p> -->
                             <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">ORDER NOW</a> -->
@@ -756,7 +755,7 @@
         </div>
         <!-- Testimonial End -->
 
-        
+
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -803,8 +802,8 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Foodzy</a>, All Right Reserved. 
-							
+                            &copy; <a class="border-bottom" href="#">Foodzy</a>, All Right Reserved.
+
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 							Designed By <a class="border-bottom" href="https://htmlcodex.com">22pts</a><br><br>
                         </div>
