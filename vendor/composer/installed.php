@@ -3,11 +3,11 @@
         'name' => 'mdaashir/foodzy',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '807deb4f68f47d3537db479f9cd909c09af53ad6',
+        'reference' => '8718769fef5a14b810c9b515b8ce9efc2c1f31f6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => true,
+        'dev' => false,
     ),
     'versions' => array(
         'graham-campbell/result-type' => array(
@@ -22,7 +22,7 @@
         'mdaashir/foodzy' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '807deb4f68f47d3537db479f9cd909c09af53ad6',
+            'reference' => '8718769fef5a14b810c9b515b8ce9efc2c1f31f6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
