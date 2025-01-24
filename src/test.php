@@ -56,7 +56,7 @@ $feedback_query = pg_query($conn, "SELECT * FROM feedback");
 </head>
 
 <body>
-<button class="btn btn-primary" type="button" onclick="location.href='index.php'">Back to Home</button>
+<button class="btn btn-primary" type="button" onclick="location.href='../index.php'">Back to Home</button>
     <div class="container">
         <h2>Sample Menu</h2>
         <table>
