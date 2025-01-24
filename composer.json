@@ -1,29 +1,42 @@
 {
-    "name": "soldier/dbms-package",
-    "authors": [
-        {
-            "name": "mdaashir",
-            "email": "s.mohamedaashir@gmail.com"
-        }
-    ],
-    "require": {
-        
-    },
-    "scripts": {
-        "start-php": "php -S localhost:8000",
-        "start": "python3 -m http.server",
-        "stop": "kill $(lsof -ti :8000) || true"
-    },
-    "watch": {
-        "composer_json": {
-            "files": ["composer.json", "composer.lock"],
-            "tasks": ["exec:composer_install"]
-        }
-    },
-    "exec": {
-        "composer_install": {
-            "cmd": "composer self-update && composer install --no-dev",
-            "exitCode": [0, 255]
-        }
-    }
+	"name": "mdaashir/foodzy",
+	"type": "project",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "mdaashir",
+			"email": "s.mohamedaashir@gmail.com"
+		},
+		{
+			"name": "Mirudhulabashini N",
+			"email": "22pt16@psgtech.ac.in"
+		}
+	],
+	"require": {
+		"ext-pgsql": "*",
+		"vlucas/phpdotenv": "^5.6"
+	},
+	"scripts": {
+		"start": "php -S localhost:8000"
+	},
+	"watch": {
+		"composer_json": {
+			"files": [
+				"composer.json",
+				"composer.lock"
+			],
+			"tasks": [
+				"exec:composer_install"
+			]
+		}
+	},
+	"exec": {
+		"composer_install": {
+			"cmd": "composer self-update && composer install --no-dev",
+			"exitCode": [
+				0,
+				255
+			]
+		}
+	}
 }
