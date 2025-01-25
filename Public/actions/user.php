@@ -2,7 +2,7 @@
 
 use Controllers\UserController;
 
-require '../../Controllers/UserController.php';
+require __DIR__ . '/../../Controllers/UserController.php';
 
 $controller = new UserController();
 $controller->handleRequest();

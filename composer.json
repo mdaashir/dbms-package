@@ -24,7 +24,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Foodzy\\": "src/"
+			"Models\\": "app/Models/",
+			"Services\\": "app/Services/",
+			"Controllers\\": "app/Http/Controllers/"
 		}
+	},
+	"config": {
+		"process-timeout": 0
 	}
 }

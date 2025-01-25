@@ -2,6 +2,7 @@
 
 namespace Services;
 
+require __DIR__ . '/../Models/User.php';
 use Models\User;
 use Exception;
 

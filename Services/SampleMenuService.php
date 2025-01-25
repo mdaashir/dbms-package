@@ -2,6 +2,7 @@
 
 namespace Services;
 
+require __DIR__ . '/../Models/SampleMenu.php';
 use Models\SampleMenu;
 use Exception;
 

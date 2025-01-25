@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Dotenv\Dotenv;
@@ -13,17 +13,12 @@ $capsule = new Capsule;
 
 //Configure the connection
 $capsule->addConnection([
-    'driver'    => getenv('DB_CONNECTION'),
-    'host'      => getenv('DB_HOST'),
-    'port'      => getenv('DB_PORT'),
-    'database'  => getenv('DB_DATABASE'),
-    'username'  => getenv('DB_USERNAME'),
-    'password'  => getenv('DB_PASSWORD'),
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'strict'    => false,
-    'engine'    => null,
-    'prefix'    => ''
+    'driver'    => $_SERVER['DB_CONNECTION'],
+    'host'      => $_SERVER['DB_HOST'],
+    'port'      => $_SERVER['DB_PORT'],
+    'database'  => $_SERVER['DB_DATABASE'],
+    'username'  => $_SERVER['DB_USERNAME'],
+    'password'  => $_SERVER['DB_PASSWORD'],
 ]);
 
 $capsule->setAsGlobal();

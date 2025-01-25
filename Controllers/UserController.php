@@ -2,7 +2,9 @@
 
 namespace Controllers;
 
-require '../config/database.php';
+require __DIR__ . '/../Config/Database.php';
+require __DIR__ . '/../Services/UserService.php';
+
 use Services\UserService;
 use Exception;
 

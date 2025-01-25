@@ -8,6 +8,10 @@ class Bill extends Model
 {
     protected $table = 'bill';
 
+    protected $primaryKey = 'bill_number';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
         'cart_id',
         'user_id',
@@ -18,7 +22,7 @@ class Bill extends Model
 
     protected $casts = [
         'total_price' => 'float',
-        'date' => 'date',
+        'date' => 'date'
     ];
 
     public $timestamps = false;

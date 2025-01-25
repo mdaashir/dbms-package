@@ -2,6 +2,7 @@
 
 namespace Services;
 
+require __DIR__ . '/../Models/Cart.php';
 use Models\Cart;
 use Exception;
 

@@ -2,6 +2,7 @@
 
 namespace Services;
 
+require __DIR__ . '/../Models/Bill.php';
 use Models\Bill;
 use Exception;
 

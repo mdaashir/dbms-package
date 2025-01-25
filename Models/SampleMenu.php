@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class SampleMenu extends Model
 {
     use SoftDeletes;
+
     protected $table = 'sample_menu';
 
     protected $fillable = [
@@ -26,7 +27,7 @@ class SampleMenu extends Model
         'is_lunch' => 'boolean',
         'is_dinner' => 'boolean',
         'is_veg' => 'boolean',
-        'price' => 'float',
+        'price' => 'float'
     ];
 
     public $timestamps = false;

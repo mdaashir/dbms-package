@@ -2,7 +2,9 @@
 
 namespace Controllers;
 
-require '../config/database.php';
+require __DIR__ . '/../config/database.php';
+require __DIR__ . '/../services/SampleMenuService.php';
+
 use Services\SampleMenuService;
 use Exception;
 

@@ -11,6 +11,10 @@ class User extends Model
 
     protected $table = 'users';
 
+    protected $primaryKey = 'user_id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
         'user_name',
         'phone_number',

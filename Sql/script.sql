@@ -15,7 +15,8 @@ CREATE TABLE sample_menu (
     is_veg BOOLEAN DEFAULT FALSE NOT NULL,
     description VARCHAR(150) NOT NULL DEFAULT 'Delicious food item',
     price FLOAT DEFAULT 0 NOT NULL CHECK (price >= 0),
-    picture TEXT NOT NULL DEFAULT 'img/menu-1.png'
+    picture TEXT NOT NULL DEFAULT 'img/menu-1.png',
+    deleted_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- Import data from sample_menu.csv
@@ -32,7 +33,8 @@ CREATE TABLE users (
     phone_number CHAR(10) NOT NULL DEFAULT '0000000000',
     email_id VARCHAR(50) NOT NULL UNIQUE,
     password_hash VARCHAR(60) NOT NULL UNIQUE,
-    role VARCHAR(5) NOT NULL DEFAULT 'user'
+    role VARCHAR(5) NOT NULL DEFAULT 'user',
+    deleted_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- Trigger function to hash password

@@ -8,6 +8,10 @@ class Cart extends Model
 {
     protected $table = 'cart';
 
+    protected $primaryKey = 'cart_id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
         'user_id',
         'food_id',
@@ -21,7 +25,7 @@ class Cart extends Model
         'quantity' => 'integer',
         'price' => 'float',
         'date' => 'date',
-        'time' => 'time',
+        'time' => 'time'
     ];
 
     public $timestamps = false;

@@ -2,7 +2,9 @@
 
 namespace Controllers;
 
-require '../Config/Database.php';
+require __DIR__ . '/../Config/Database.php';
+require __DIR__ . '/../Services/CartService.php';
+
 use Services\CartService;
 use Exception;
 

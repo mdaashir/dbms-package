@@ -2,6 +2,7 @@
 
 namespace Services;
 
+require __DIR__ . '/../Models/Feedback.php';
 use Models\Feedback;
 use Exception;
 

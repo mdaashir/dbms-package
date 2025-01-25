@@ -18,7 +18,7 @@ class Feedback extends Model
     ];
 
     protected $casts = [
-        'created_at' => 'datetime',
+        'created_at' => 'datetime'
     ];
 
     public $timestamps = false;
