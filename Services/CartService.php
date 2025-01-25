@@ -1,41 +1,83 @@
 <?php
 
-namespace App\Services;
+namespace Services;
 
-use App\Models\Cart;
-use App\Models\SampleMenu;
+use Models\Cart;
 use Exception;
 
 class CartService
 {
-    public static function addItem($userId, $foodId, $quantity)
+    /**
+     * @throws Exception
+     */
+    public static function createCart($data)
     {
-        // Validate data
-        if ($quantity <= 0) {
-            throw new Exception("Quantity must be greater than 0.");
+        self::validateCartData($data);
+
+        try {
+            return Cart::create($data);
+        } catch (Exception $e) {
+            throw new Exception("Error creating cart: " . $e->getMessage());
         }
-
-        $foodItem = SampleMenu::find($foodId);
-        if (!$foodItem) {
-            throw new Exception("Food item does not exist.");
-        }
-
-        // Calculate price
-        $price = $foodItem->price * $quantity;
-
-        // Add to cart
-        $cart = Cart::create([
-            'user_id' => $userId,
-            'food_id' => $foodId,
-            'quantity' => $quantity,
-            'price' => $price,
-        ]);
-
-        return $cart->id;
     }
 
-    public static function getUserCart($userId)
+    /**
+     * @throws Exception
+     */
+    public static function updateCart($id, $data)
     {
-        return Cart::where('user_id', $userId)->get();
+        self::validateCartData($data, true);
+
+        try {
+            $cart = Cart::findOrFail($id);
+            $cart->update($data);
+            return $cart;
+        } catch (Exception $e) {
+            throw new Exception("Error updating cart: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * @throws Exception
+     */
+    public static function deleteCart($id): void
+    {
+        try {
+            $cart = Cart::findOrFail($id);
+            $cart->delete();
+        } catch (Exception $e) {
+            throw new Exception("Error deleting cart: " . $e->getMessage());
+        }
+    }
+
+    public static function getAllCarts()
+    {
+        return Cart::all();
+    }
+
+    /**
+     * @throws Exception
+     */
+    public static function getCartById($id)
+    {
+        try {
+            return Cart::find($id);
+        } catch (Exception $e) {
+            throw new Exception("Error fetching cart: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * @throws Exception
+     */
+    private static function validateCartData($data, $isUpdate = false): void
+    {
+        if (empty($data['user_id']) || empty($data['food_id']) || empty($data['quantity'])) {
+            throw new Exception("All fields are required.");
+        }
+
+        if (!is_numeric($data['quantity']) || $data['quantity'] <= 0) {
+            throw new Exception("Invalid quantity.");
+        }
     }
 }
