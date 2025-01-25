@@ -34,7 +34,7 @@ class Bill extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function setTotalPriceAttribute($value)
+    public function setTotalPriceAttribute($value): void
     {
         if (!$this->relationLoaded('cart')) {
             $this->load('cart');

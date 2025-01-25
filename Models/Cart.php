@@ -37,7 +37,7 @@ class Cart extends Model
         return $this->belongsTo(SampleMenu::class, 'food_id');
     }
 
-    public function setPriceAttribute($value)
+    public function setPriceAttribute($value): void
     {
         if (!$this->relationLoaded('foodItem')) {
             $this->load('foodItem');
