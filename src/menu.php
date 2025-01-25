@@ -121,9 +121,9 @@ $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
         <!-- End of Search bar -->
 
          <div>  <!-- ADMIN FUNCTIONALITIES -->
-            <button class="btn btn-primary" type="button" onclick="location.href='try.php'">Add</button>
-            <button class="btn btn-primary" type="button" onclick="location.href='try.php'">Edit</button>
-            <button class="btn btn-primary" type="button" onclick="location.href='try.php'">Delete</button>
+            <button class="btn btn-primary" type="button" onclick="location.href='test.php'">Add</button>
+            <button class="btn btn-primary" type="button" onclick="location.href='test.php'">Edit</button>
+            <button class="btn btn-primary" type="button" onclick="location.href='test.php'">Delete</button>
         </div>
                 <!-- 3 NAV TABS -->
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -162,26 +162,28 @@ $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                     <!-- ITEM BEGIN                            -->
-                                <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
-                                <!-- ITEM BEGIN                            -->
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src=<?php echo $row['picture']; ?> alt="" style="width: 80px;">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="assets/img/menu-1.png" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span><?php echo $row['food_items']; ?></span>
-                                                <span class="text-primary">$<?php echo $row['price']; ?></span>
-                                            </h5>
-                                            <small class="fst-italic"><?php echo $row['description']; ?></small>
-                                            <form id="menu-item-form-1" class="d-flex mt-3">
-                                                <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
-                                                <button type="submit" class="btn btn-primary">+</button>
-                                            </form>
-                                        </div>
+                               <!-- Inside your while loop where you display menu items -->
+                            <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="assets/img/menu-1.png" alt="" style="width: 80px;">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo $row['picture']; ?>" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span><?php echo $row['food_items']; ?></span>
+                                            <span class="text-primary">$<?php echo $row['price']; ?></span>
+                                        </h5>
+                                        <small class="fst-italic"><?php echo $row['description']; ?></small>
+                                        <form action="add_to_cart.php" method="POST" class="d-flex mt-3">
+                                            <input type="hidden" name="food_item_id" value="<?php echo $row['id']; ?>">
+                                            <input type="number" name="quantity" value="0" min="0" class="form-control me-2" style="width: 50px;">
+                                            <button type="submit" class="btn btn-primary">+</button>
+                                        </form>
                                     </div>
                                 </div>
-                                <?php } ?>
+                            </div>
+                            <?php } ?>
+                            
                                 <!-- ITEM END -->
                             </div>
                         </div>
@@ -193,6 +195,7 @@ $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
                                 <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="assets/img/menu-1.png" alt="" style="width: 80px;">
                                         <img class="flex-shrink-0 img-fluid rounded" src=<?php echo $row['picture']; ?> alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
@@ -219,6 +222,7 @@ $menu_query = pg_query($conn, "SELECT * FROM sample_menu");
                                 <?php while ($row = pg_fetch_assoc($menu_query)) { ?>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="assets/img/menu-1.png" alt="" style="width: 80px;">
                                         <img class="flex-shrink-0 img-fluid rounded" src=<?php echo $row['picture']; ?> alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
