@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Model
 {
-//    use SoftDeletes; // Optional: If you want soft delete functionality
+    use SoftDeletes;
 
     protected $table = 'users';
 

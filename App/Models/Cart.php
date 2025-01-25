@@ -39,6 +39,10 @@ class Cart extends Model
 
     public function setPriceAttribute($value)
     {
+        if (!$this->relationLoaded('foodItem')) {
+            $this->load('foodItem');
+        }
+
         $this->attributes['price'] = $this->foodItem->price * $this->quantity;
     }
 }

@@ -36,6 +36,10 @@ class Bill extends Model
 
     public function setTotalPriceAttribute($value)
     {
+        if (!$this->relationLoaded('cart')) {
+            $this->load('cart');
+        }
+
         $this->attributes['total_price'] = $this->cart->price;
     }
 }
