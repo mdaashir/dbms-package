@@ -25,12 +25,12 @@ class BillService
     /**
      * @throws Exception
      */
-    public static function updateBill($id, $data)
+    public static function updateBill($bill_number, $data)
     {
         self::validateBillData($data, true);
 
         try {
-            $bill = Bill::findOrFail($id);
+            $bill = Bill::findOrFail($bill_number);
             $bill->update($data);
             return $bill;
         } catch (Exception $e) {
@@ -41,28 +41,32 @@ class BillService
     /**
      * @throws Exception
      */
-    public static function deleteBill($id): void
+    public static function deleteBill($bill_number): void
     {
         try {
-            $bill = Bill::findOrFail($id);
+            $bill = Bill::findOrFail($bill_number);
             $bill->delete();
         } catch (Exception $e) {
             throw new Exception("Error deleting bill: " . $e->getMessage());
         }
     }
 
-    public static function getAllBills()
+    public static function getAllBills($perPage = null)
     {
+        if ($perPage) {
+            return Bill::paginate($perPage);
+        }
+
         return Bill::all();
     }
 
     /**
      * @throws Exception
      */
-    public static function getBillById($id)
+    public static function getBillByBillNumber($bill_number)
     {
         try {
-            return Bill::find($id);
+            return Bill::find($bill_number);
         } catch (Exception $e) {
             throw new Exception("Error fetching bill: " . $e->getMessage());
         }
@@ -73,12 +77,18 @@ class BillService
      */
     private static function validateBillData($data, $isUpdate = false): void
     {
-        if (empty($data['cart_id']) || empty($data['user_id']) || empty($data['total_price'])) {
-            throw new Exception("All fields are required.");
+        if (!$isUpdate) {
+            if (empty($data['cart_id']) || empty($data['user_id'])) {
+                throw new Exception("All fields (cart_id, user_id) are required.");
+            }
         }
 
-        if (!is_numeric($data['total_price']) || $data['total_price'] < 0) {
-            throw new Exception("Invalid total price.");
+        if (isset($data['total_price']) && (!is_numeric($data['total_price']) || $data['total_price'] < 0)) {
+            throw new Exception("Total price must be a positive number.");
+        }
+
+        if (isset($data['date']) && !strtotime($data['date'])) {
+            throw new Exception("Invalid date format.");
         }
     }
 }

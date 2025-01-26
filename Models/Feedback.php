@@ -8,6 +8,10 @@ class Feedback extends Model
 {
     protected $table = 'feedback';
 
+    protected $primaryKey = 'email_id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
         'user_name',
         'email_id',

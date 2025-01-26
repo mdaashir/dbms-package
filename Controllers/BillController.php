@@ -3,41 +3,38 @@
 namespace Controllers;
 
 require __DIR__ . '/../Config/Database.php';
-require __DIR__ . '/../Services/CartService.php';
+require __DIR__ . '/../Services/BillService.php';
 
 use Services\BillService;
 use Exception;
 
 class BillController
 {
-    public function handleRequest(): void
+    public function handleRequest()
     {
         $action = $_POST['action'] ?? null;
-        $id = $_POST['id'] ?? null;
+        $bill_number = $_POST['bill_number'] ?? null;
+        $perPage = $_POST['perPage'] ?? null;
         $data = $_POST;
 
         try {
             switch ($action) {
                 case 'create':
-                    $billId = BillService::createBill($data);
-                    echo "Bill created successfully. Bill ID: $billId";
-                    break;
+                    $bill = BillService::createBill($data);
+                    echo "Bill created successfully.";
+                    return $bill;
                 case 'update':
-                    BillService::updateBill($id, $data);
+                    $bill = BillService::updateBill($bill_number, $data);
                     echo "Bill updated successfully.";
-                    break;
+                    return $bill;
                 case 'delete':
-                    BillService::deleteBill($id);
+                    BillService::deleteBill($bill_number);
                     echo "Bill deleted successfully.";
                     break;
                 case 'view':
-                    $bills = BillService::getAllBills();
-                    echo json_encode($bills);
-                    break;
+                    return BillService::getAllBills($perPage);
                 case 'show':
-                    $bill = BillService::getBillById($id);
-                    echo json_encode($bill);
-                    break;
+                    return BillService::getBillByBillNumber($bill_number);
                 default:
                     echo "Invalid action.";
             }

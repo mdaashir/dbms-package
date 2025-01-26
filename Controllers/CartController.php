@@ -10,34 +10,31 @@ use Exception;
 
 class CartController
 {
-    public function handleRequest(): void
+    public function handleRequest()
     {
         $action = $_POST['action'] ?? null;
-        $id = $_POST['id'] ?? null;
+        $cartId = $_POST['cart_id'] ?? null;
+        $perPage = $_POST['perPage'] ?? null;
         $data = $_POST;
 
         try {
             switch ($action) {
                 case 'create':
-                    $cartId = CartService::createCart($data);
-                    echo "Cart created successfully. Cart ID: $cartId";
-                    break;
+                    $cart = CartService::createCart($data);
+                    echo "Cart created successfully.";
+                    return $cart;
                 case 'update':
-                    CartService::updateCart($id, $data);
+                    $cart = CartService::updateCart($cartId, $data);
                     echo "Cart updated successfully.";
-                    break;
+                    return $cart;
                 case 'delete':
-                    CartService::deleteCart($id);
+                    CartService::deleteCart($cartId);
                     echo "Cart deleted successfully.";
                     break;
                 case 'view':
-                    $carts = CartService::getAllCarts();
-                    echo json_encode($carts);
-                    break;
+                    return CartService::getAllCarts($perPage);
                 case 'show':
-                    $cart = CartService::getCartById($id);
-                    echo json_encode($cart);
-                    break;
+                    return CartService::getCartByCartId($cartId);
                 default:
                     echo "Invalid action.";
             }

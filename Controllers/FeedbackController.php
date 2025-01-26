@@ -2,42 +2,39 @@
 
 namespace Controllers;
 
-require __DIR__ . '/../config/database.php';
-require __DIR__ . '/../services/FeedbackService.php';
+require __DIR__ . '/../Config/Database.php';
+require __DIR__ . '/../Services/FeedbackService.php';
 
 use Services\FeedbackService;
 use Exception;
 
 class FeedbackController
 {
-    public function handleRequest(): void
+    public function handleRequest()
     {
         $action = $_POST['action'] ?? null;
-        $id = $_POST['id'] ?? null;
+        $email_id = $_POST['email_id'] ?? null;
+        $perPage = $_POST['perPage'] ?? null;
         $data = $_POST;
 
         try {
             switch ($action) {
                 case 'create':
-                    $feedbackId = FeedbackService::createFeedback($data);
-                    echo "Feedback created successfully. Feedback ID: $feedbackId";
-                    break;
+                    $feedback = FeedbackService::createFeedback($data);
+                    echo "Feedback created successfully.";
+                    return $feedback;
                 case 'update':
-                    FeedbackService::updateFeedback($id, $data);
+                    $feedback = FeedbackService::updateFeedback($email_id, $data);
                     echo "Feedback updated successfully.";
-                    break;
+                    return $feedback;
                 case 'delete':
-                    FeedbackService::deleteFeedback($id);
+                    FeedbackService::deleteFeedback($email_id);
                     echo "Feedback deleted successfully.";
                     break;
                 case 'view':
-                    $feedbacks = FeedbackService::getAllFeedbacks();
-                    echo json_encode($feedbacks);
-                    break;
+                    return FeedbackService::getAllFeedbacks($perPage);
                 case 'show':
-                    $feedback = FeedbackService::getFeedbackById($id);
-                    echo json_encode($feedback);
-                    break;
+                    return FeedbackService::getFeedbackByEmail($email_id);
                 default:
                     echo "Invalid action.";
             }

@@ -2,42 +2,39 @@
 
 namespace Controllers;
 
-require __DIR__ . '/../config/database.php';
-require __DIR__ . '/../services/SampleMenuService.php';
+require __DIR__ . '/../Config/Database.php';
+require __DIR__ . '/../Services/SampleMenuService.php';
 
 use Services\SampleMenuService;
 use Exception;
 
 class SampleMenuController
 {
-    public function handleRequest(): void
+    public function handleRequest()
     {
         $action = $_POST['action'] ?? null;
         $id = $_POST['id'] ?? null;
+        $perPage = $_POST['perPage'] ?? null;
         $data = $_POST;
 
         try {
             switch ($action) {
                 case 'create':
-                    $sampleMenuId = SampleMenuService::createSampleMenu($data);
-                    echo "Sample menu created successfully. Sample Menu ID: $sampleMenuId";
-                    break;
+                    $sampleMenu = SampleMenuService::createSampleMenu($data);
+                    echo "Sample menu created successfully.";
+                    return $sampleMenu;
                 case 'update':
-                    SampleMenuService::updateSampleMenu($id, $data);
+                    $sampleMenu = SampleMenuService::updateSampleMenu($id, $data);
                     echo "Sample menu updated successfully.";
-                    break;
+                    return $sampleMenu;
                 case 'delete':
                     SampleMenuService::deleteSampleMenu($id);
                     echo "Sample menu deleted successfully.";
                     break;
                 case 'view':
-                    $sampleMenus = SampleMenuService::getAllSampleMenus();
-                    echo json_encode($sampleMenus);
-                    break;
+                    return SampleMenuService::getAllSampleMenus($perPage);
                 case 'show':
-                    $sampleMenu = SampleMenuService::getSampleMenuById($id);
-                    echo json_encode($sampleMenu);
-                    break;
+                    return SampleMenuService::getSampleMenuById($id);
                 default:
                     echo "Invalid action.";
             }

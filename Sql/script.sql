@@ -159,7 +159,7 @@ DROP TABLE IF EXISTS feedback;
 -- Create the feedback table
 CREATE TABLE feedback (
     user_name VARCHAR(30) NOT NULL,
-    email_id VARCHAR(50) NOT NULL UNIQUE,
+    email_id VARCHAR(50) PRIMARY KEY,
     profession VARCHAR(50),
     messages VARCHAR(150),
     picture TEXT DEFAULT 'img/user.png',

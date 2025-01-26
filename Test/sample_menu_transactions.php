@@ -14,28 +14,44 @@
         <form action="../Pages/actions/sample_menu.php" method="POST">
             <input type="hidden" name="action" value="create">
             <label for="food_items">Food Item:</label>
-            <input type="text" name="food_items" required>
+            <label>
+                <input type="text" name="food_items" required>
+            </label>
             <br>
             <label for="is_breakfast">Is Breakfast:</label>
-            <input type="checkbox" name="is_breakfast">
+            <label>
+                <input type="checkbox" name="is_breakfast">
+            </label>
             <br>
             <label for="is_lunch">Is Lunch:</label>
-            <input type="checkbox" name="is_lunch">
+            <label>
+                <input type="checkbox" name="is_lunch">
+            </label>
             <br>
             <label for="is_dinner">Is Dinner:</label>
-            <input type="checkbox" name="is_dinner">
+            <label>
+                <input type="checkbox" name="is_dinner">
+            </label>
             <br>
             <label for="is_veg">Is Veg:</label>
-            <input type="checkbox" name="is_veg">
+            <label>
+                <input type="checkbox" name="is_veg">
+            </label>
             <br>
             <label for="description">Description:</label>
-            <input type="text" name="description">
+            <label>
+                <input type="text" name="description">
+            </label>
             <br>
             <label for="price">Price:</label>
-            <input type="text" name="price">
+            <label>
+                <input type="text" name="price">
+            </label>
             <br>
             <label for="picture">Picture URL:</label>
-            <input type="text" name="picture">
+            <label>
+                <input type="text" name="picture">
+            </label>
             <br>
             <input type="submit" value="Create Menu Item">
         </form>
@@ -45,31 +61,49 @@
         <form action="../Pages/actions/sample_menu.php" method="POST">
             <input type="hidden" name="action" value="update">
             <label for="id">Menu Item ID:</label>
-            <input type="text" name="id" required>
+            <label>
+                <input type="text" name="id" required>
+            </label>
             <br>
             <label for="food_items">Food Item:</label>
-            <input type="text" name="food_items">
+            <label>
+                <input type="text" name="food_items">
+            </label>
             <br>
             <label for="is_breakfast">Is Breakfast:</label>
-            <input type="checkbox" name="is_breakfast">
+            <label>
+                <input type="checkbox" name="is_breakfast">
+            </label>
             <br>
             <label for="is_lunch">Is Lunch:</label>
-            <input type="checkbox" name="is_lunch">
+            <label>
+                <input type="checkbox" name="is_lunch">
+            </label>
             <br>
             <label for="is_dinner">Is Dinner:</label>
-            <input type="checkbox" name="is_dinner">
+            <label>
+                <input type="checkbox" name="is_dinner">
+            </label>
             <br>
             <label for="is_veg">Is Veg:</label>
-            <input type="checkbox" name="is_veg">
+            <label>
+                <input type="checkbox" name="is_veg">
+            </label>
             <br>
             <label for="description">Description:</label>
-            <input type="text" name="description">
+            <label>
+                <input type="text" name="description">
+            </label>
             <br>
             <label for="price">Price:</label>
-            <input type="text" name="price">
+            <label>
+                <input type="text" name="price">
+            </label>
             <br>
             <label for="picture">Picture URL:</label>
-            <input type="text" name="picture">
+            <label>
+                <input type="text" name="picture">
+            </label>
             <br>
             <input type="submit" value="Update Menu Item">
         </form>
@@ -79,7 +113,9 @@
         <form action="../Pages/actions/sample_menu.php" method="POST">
             <input type="hidden" name="action" value="delete">
             <label for="id">Menu Item ID:</label>
-            <input type="text" name="id" required>
+            <label>
+                <input type="text" name="id" required>
+            </label>
             <br>
             <input type="submit" value="Delete Menu Item">
         </form>
@@ -96,7 +132,9 @@
         <form action="../Pages/actions/sample_menu.php" method="POST">
             <input type="hidden" name="action" value="show">
             <label for="id">Menu Item ID:</label>
-            <input type="text" name="id" required>
+            <label>
+                <input type="text" name="id" required>
+            </label>
             <br>
             <input type="submit" value="View Menu Item">
         </form>

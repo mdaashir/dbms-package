@@ -51,8 +51,12 @@ class SampleMenuService
         }
     }
 
-    public static function getAllSampleMenus()
+    public static function getAllSampleMenus($perPage = null)
     {
+        if ($perPage) {
+            return SampleMenu::paginate($perPage);
+        }
+
         return SampleMenu::all();
     }
 
@@ -73,8 +77,14 @@ class SampleMenuService
      */
     private static function validateSampleMenuData($data, $isUpdate = false): void
     {
-        if (empty($data['food_items']) || empty($data['description']) || empty($data['price'])) {
-            throw new Exception("All fields are required.");
+        if(!$isUpdate) {
+            if (empty($data['food_items']) || empty($data['description']) || empty($data['price'])) {
+                throw new Exception("All fields are required.");
+            }
+        }
+
+        if($data['picture'] === null || $data['picture'] === '') {
+            unset($data['picture']);
         }
 
         if (!is_numeric($data['price']) || $data['price'] < 0) {

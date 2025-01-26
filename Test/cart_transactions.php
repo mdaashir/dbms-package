@@ -14,13 +14,19 @@
         <form action="../Pages/actions/cart.php" method="POST">
             <input type="hidden" name="action" value="create">
             <label for="user_id">User ID:</label>
-            <input type="text" name="user_id" required>
+            <label>
+                <input type="text" name="user_id" required>
+            </label>
             <br>
             <label for="food_id">Food Item ID:</label>
-            <input type="text" name="food_id" required>
+            <label>
+                <input type="text" name="food_id" required>
+            </label>
             <br>
             <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" required>
+            <label>
+                <input type="number" name="quantity" required>
+            </label>
             <br>
             <input type="submit" value="Create Cart Item">
         </form>
@@ -30,16 +36,24 @@
         <form action="../Pages/actions/cart.php" method="POST">
             <input type="hidden" name="action" value="update">
             <label for="cart_id">Cart ID:</label>
-            <input type="text" name="cart_id" required>
+            <label>
+                <input type="text" name="cart_id" required>
+            </label>
             <br>
             <label for="user_id">User ID:</label>
-            <input type="text" name="user_id">
+            <label>
+                <input type="text" name="user_id">
+            </label>
             <br>
             <label for="food_id">Food Item ID:</label>
-            <input type="text" name="food_id">
+            <label>
+                <input type="text" name="food_id">
+            </label>
             <br>
             <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity">
+            <label>
+                <input type="number" name="quantity">
+            </label>
             <br>
             <input type="submit" value="Update Cart Item">
         </form>
@@ -49,7 +63,9 @@
         <form action="../Pages/actions/cart.php" method="POST">
             <input type="hidden" name="action" value="delete">
             <label for="cart_id">Cart ID:</label>
-            <input type="text" name="cart_id" required>
+            <label>
+                <input type="text" name="cart_id" required>
+            </label>
             <br>
             <input type="submit" value="Delete Cart Item">
         </form>
@@ -66,7 +82,9 @@
         <form action="../Pages/actions/cart.php" method="POST">
             <input type="hidden" name="action" value="show">
             <label for="cart_id">Cart ID:</label>
-            <input type="text" name="cart_id" required>
+            <label>
+                <input type="text" name="cart_id" required>
+            </label>
             <br>
             <input type="submit" value="View Cart Item">
         </form>

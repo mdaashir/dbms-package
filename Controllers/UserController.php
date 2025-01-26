@@ -10,34 +10,31 @@ use Exception;
 
 class UserController
 {
-    public function handleRequest(): void
+    public function handleRequest()
     {
         $action = $_POST['action'] ?? null;
         $id = $_POST['id'] ?? null;
+        $perPage = $_POST['perPage'] ?? null;
         $data = $_POST;
 
         try {
             switch ($action) {
                 case 'create':
-                    $userId = UserService::createUser($data);
-                    echo "User created successfully. User ID: $userId";
-                    break;
+                    $user = UserService::createUser($data);
+                    echo "User created successfully.";
+                    return $user;
                 case 'update':
-                    UserService::updateUser($id, $data);
+                    $user = UserService::updateUser($id, $data);
                     echo "User updated successfully.";
-                    break;
+                    return $user;
                 case 'delete':
                     UserService::deleteUser($id);
                     echo "User deleted successfully.";
                     break;
                 case 'view':
-                    $users = UserService::getAllUsers();
-                    echo json_encode($users);
-                    break;
+                    return UserService::getAllUsers($perPage);
                 case 'show':
-                    $user = UserService::getUserById($id);
-                    echo json_encode($user);
-                    break;
+                    return UserService::getUserById($id);
                 default:
                     echo "Invalid action.";
             }

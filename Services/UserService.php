@@ -18,8 +18,7 @@ class UserService
         $data['password_hash'] = password_hash($data['password'], PASSWORD_BCRYPT);
 
         try {
-            $user = User::create($data);
-            return $user->id;
+            return User::create($data);
         } catch (Exception $e) {
             throw new Exception("Error creating user: " . $e->getMessage());
         }
@@ -54,8 +53,12 @@ class UserService
         }
     }
 
-    public static function getAllUsers()
+    public static function getAllUsers($perPage = null)
     {
+        if ($perPage) {
+            return User::paginate($perPage);
+        }
+
         return User::all();
     }
 
@@ -76,8 +79,10 @@ class UserService
      */
     private static function validateUserData($data, $isUpdate = false): void
     {
-        if (empty($data['user_name']) || empty($data['email_id']) || (!$isUpdate && empty($data['password']))) {
-            throw new Exception("All fields are required.");
+        if(!$isUpdate) {
+            if (empty($data['user_name']) || empty($data['email_id']) || empty($data['password'])) {
+                throw new Exception("All fields are required.");
+            }
         }
 
         if (!filter_var($data['email_id'], FILTER_VALIDATE_EMAIL)) {

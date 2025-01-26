@@ -14,16 +14,24 @@
         <form action="../Pages/actions/user.php" method="POST">
             <input type="hidden" name="action" value="create">
             <label for="user_name">User Name:</label>
-            <input type="text" name="user_name" required>
+            <label>
+                <input type="text" name="user_name" required>
+            </label>
             <br>
             <label for="phone_number">Phone Number:</label>
-            <input type="text" name="phone_number">
+            <label>
+                <input type="text" name="phone_number">
+            </label>
             <br>
             <label for="email_id">Email ID:</label>
-            <input type="email" name="email_id" required>
+            <label>
+                <input type="email" name="email_id" required>
+            </label>
             <br>
             <label for="password">Password:</label>
-            <input type="password" name="password" required>
+            <label>
+                <input type="password" name="password" required>
+            </label>
             <br>
             <input type="submit" value="Create User">
         </form>
@@ -33,19 +41,29 @@
         <form action="../Pages/actions/user.php" method="POST">
             <input type="hidden" name="action" value="update">
             <label for="id">User ID:</label>
-            <input type="text" name="id" required>
+            <label>
+                <input type="text" name="id" required>
+            </label>
             <br>
             <label for="user_name">User Name:</label>
-            <input type="text" name="user_name">
+            <label>
+                <input type="text" name="user_name">
+            </label>
             <br>
             <label for="phone_number">Phone Number:</label>
-            <input type="text" name="phone_number">
+            <label>
+                <input type="text" name="phone_number">
+            </label>
             <br>
             <label for="email_id">Email ID:</label>
-            <input type="email" name="email_id">
+            <label>
+                <input type="email" name="email_id">
+            </label>
             <br>
             <label for="password">Password:</label>
-            <input type="password" name="password">
+            <label>
+                <input type="password" name="password">
+            </label>
             <br>
             <input type="submit" value="Update User">
         </form>
@@ -55,7 +73,9 @@
         <form action="../Pages/actions/user.php" method="POST">
             <input type="hidden" name="action" value="delete">
             <label for="id">User ID:</label>
-            <input type="text" name="id" required>
+            <label>
+                <input type="text" name="id" required>
+            </label>
             <br>
             <input type="submit" value="Delete User">
         </form>
@@ -72,7 +92,9 @@
         <form action="../Pages/actions/user.php" method="POST">
             <input type="hidden" name="action" value="show">
             <label for="id">User ID:</label>
-            <input type="text" name="id" required>
+            <label>
+                <input type="text" name="id" required>
+            </label>
             <br>
             <input type="submit" value="View User">
         </form>
