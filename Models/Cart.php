@@ -25,7 +25,7 @@ class Cart extends Model
         'quantity' => 'integer',
         'price' => 'float',
         'date' => 'date',
-        'time' => 'time'
+        'time' => 'string'
     ];
 
     public $timestamps = false;

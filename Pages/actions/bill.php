@@ -2,7 +2,7 @@
 
 use Controllers\BillController;
 
-require '../../Controllers/BillController.php';
+require __DIR__ . '/../../Controllers/BillController.php';
 
 $controller = new BillController();
 $controller->handleRequest();

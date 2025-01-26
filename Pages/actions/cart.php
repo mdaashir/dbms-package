@@ -2,7 +2,7 @@
 
 use Controllers\CartController;
 
-require '../../Controllers/CartController.php';
+require __DIR__ . '/../../Controllers/CartController.php';
 
 $controller = new CartController();
 $controller->handleRequest();

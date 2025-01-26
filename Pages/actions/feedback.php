@@ -2,7 +2,7 @@
 
 use Controllers\FeedbackController;
 
-require '../../Controllers/FeedbackController.php';
+require __DIR__ . '/../../Controllers/FeedbackController.php';
 
 $controller = new FeedbackController();
 $controller->handleRequest();

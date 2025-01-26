@@ -11,14 +11,14 @@ $dotenv->load();
 
 $capsule = new Capsule;
 
-//Configure the connection
+// Configure the connection
 $capsule->addConnection([
-    'driver'    => $_SERVER['DB_CONNECTION'],
-    'host'      => $_SERVER['DB_HOST'],
-    'port'      => $_SERVER['DB_PORT'],
-    'database'  => $_SERVER['DB_DATABASE'],
-    'username'  => $_SERVER['DB_USERNAME'],
-    'password'  => $_SERVER['DB_PASSWORD'],
+    'driver'    => $_ENV['DB_CONNECTION'],
+    'host'      => $_ENV['DB_HOST'],
+    'port'      => $_ENV['DB_PORT'],
+    'database'  => $_ENV['DB_DATABASE'],
+    'username'  => $_ENV['DB_USERNAME'],
+    'password'  => $_ENV['DB_PASSWORD'],
 ]);
 
 $capsule->setAsGlobal();

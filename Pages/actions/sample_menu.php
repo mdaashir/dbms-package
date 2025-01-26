@@ -2,7 +2,7 @@
 
 use Controllers\SampleMenuController;
 
-require '../../Controllers/SampleMenuController.php';
+require __DIR__ . '/../../Controllers/SampleMenuController.php';
 
 $controller = new SampleMenuController();
 $controller->handleRequest();

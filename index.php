@@ -1,5 +1,3 @@
-<?php include ( "src/inc/connect.inc.php" ); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +9,11 @@
     <meta content="" name="description">
 
 	<!-- Favicon -->
-	<link href="src/assets/img/restaurant/favicon.ico" rel="icon">
-	<link rel="apple-touch-icon" sizes="180x180" href="src/assets/img/restaurant/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="src/assets/img/restaurant/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="src/assets/img/restaurant/favicon-16x16.png">
-	<link rel="manifest" href="src/assets/img/restaurant/site.webmanifest">
+	<link href="Pages/assets/img/restaurant/favicon.ico" rel="icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="Pages/assets/img/restaurant/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Pages/assets/img/restaurant/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Pages/assets/img/restaurant/favicon-16x16.png">
+	<link rel="manifest" href="Pages/assets/img/restaurant/site.webmanifest">
 
 
     <!-- Google Web Fonts -->
@@ -28,15 +26,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="src/assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="src/assets/lib/owlcarousel/src/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="src/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="Pages/assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="Pages/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="Pages/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="src/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Pages/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="src/assets/css/style.css" rel="stylesheet">
+    <link href="Pages/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,7 +53,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
                     <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Foodzy</h1>
-                    <!-- <img src="src/assets/img/logo.png" alt="Logo"> -->
+                    <!-- <img src="Pages/assets/img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -63,22 +61,22 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="#" class="nav-item nav-link active">Home</a>
-                        <a href="src/about.php" class="nav-item nav-link">About</a>
-                        <a href="src/service.php" class="nav-item nav-link">Service</a>
-                        <a href="src/menu.php" class="nav-item nav-link">Menu</a>
+                        <a href="Pages/about.php" class="nav-item nav-link">About</a>
+                        <a href="Pages/service.php" class="nav-item nav-link">Service</a>
+                        <a href="Pages/menu.php" class="nav-item nav-link">Menu</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="src/booking.php" class="dropdown-item">Booking</a>
-				                <a href="src/checkout.php" class="dropdown-item">Your Orders</a>
-                                <a href="src/team.php" class="dropdown-item">Our Team</a>
-                                <a href="src/testimonial.php" class="dropdown-item">Testimonial</a>
+                                <a href="Pages/booking.php" class="dropdown-item">Booking</a>
+				                <a href="Pages/checkout.php" class="dropdown-item">Your Orders</a>
+                                <a href="Pages/team.php" class="dropdown-item">Our Team</a>
+                                <a href="Pages/testimonial.php" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="src/contact.php" class="nav-item nav-link">Contact</a>
+                        <a href="Pages/contact.php" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="src/booking.php" class="btn btn-primary py-2 px-4">ORDER NOW</a>&nbsp;&nbsp;
-                    <a href="src/login.php" class="btn btn-primary py-2 px-4">LOGIN/SIGNUP</a>
+                    <a href="Pages/booking.php" class="btn btn-primary py-2 px-4">ORDER NOW</a>&nbsp;&nbsp;
+                    <a href="Pages/login.php" class="btn btn-primary py-2 px-4">LOGIN/SIGNUP</a>
                 </div>
             </nav>
 
@@ -92,7 +90,7 @@
                             <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">ORDER NOW</a> -->
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                            <img class="img-fluid" src="src/assets/img/heroo.png" alt="" width="70%">
+                            <img class="img-fluid" src="Pages/assets/img/heroo.png" alt="" width="70%">
                         </div>
                     </div>
                 </div>
@@ -154,16 +152,16 @@
             <div class="col-lg-6">
                 <div class="row g-3">
                     <div class="col-6 text-start">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="src/assets/img/about-1.jpg">
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="Pages/assets/img/about-1.jpg">
                     </div>
                     <div class="col-6 text-start">
-                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="src/assets/img/about-2.jpg" style="margin-top: 25%;">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="Pages/assets/img/about-2.jpg" style="margin-top: 25%;">
                     </div>
                     <div class="col-6 text-end">
-                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="src/assets/img/about-3.jpg">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="Pages/assets/img/about-3.jpg">
                     </div>
                     <div class="col-6 text-end">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="src/assets/img/about-4.jpg">
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="Pages/assets/img/about-4.jpg">
                     </div>
                 </div>
             </div>
@@ -192,7 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="src/about.php">Read More</a>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="Pages/about.php">Read More</a>
             </div>
         </div>
     </div>
@@ -243,7 +241,7 @@
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -255,7 +253,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-2.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -267,7 +265,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-3.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -279,7 +277,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -291,7 +289,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-5.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -303,7 +301,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-6.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -315,7 +313,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-7.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -327,7 +325,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -343,7 +341,7 @@
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -355,7 +353,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-2.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -367,7 +365,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-3.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -379,7 +377,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -391,7 +389,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-5.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -403,7 +401,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-6.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -415,7 +413,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-7.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -427,7 +425,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -443,7 +441,7 @@
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-1.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -455,7 +453,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-2.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -467,7 +465,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-3.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -479,7 +477,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-4.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -491,7 +489,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-5.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -503,7 +501,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-6.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -515,7 +513,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-7.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -527,7 +525,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="src/assets/img/menu-8.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="Pages/assets/img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Chicken Burger</span>
@@ -541,7 +539,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="src/menu.php">See More</a>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="Pages/menu.php">See More</a>
             </div>
             <!-- <a class="btn btn-primary py-3 px-5 mt-2" href="menu.php">See More</a> -->
         </div>
@@ -638,7 +636,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="src/assets/img/chef-1.jpg" alt="">
+                        <img class="img-fluid" src="Pages/assets/img/chef-1.jpg" alt="">
                     </div>
                     <h5 class="mb-0">Sanjeev Kapoor</h5>
                     <small>Head Chef</small>
@@ -652,7 +650,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="src/assets/img/chef-2.jpg" alt="">
+                        <img class="img-fluid" src="Pages/assets/img/chef-2.jpg" alt="">
                     </div>
                     <h5 class="mb-0">Venkatesh Bhatt</h5>
                     <small>Sous Chef</small>
@@ -666,7 +664,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="src/assets/img/chef-3.jpg" alt="">
+                        <img class="img-fluid" src="Pages/assets/img/chef-3.jpg" alt="">
                     </div>
                     <h5 class="mb-0">Maneet Chauhan</h5>
                     <small>Pastry Chef</small>
@@ -680,7 +678,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item text-center rounded overflow-hidden">
                     <div class="rounded-circle overflow-hidden m-4">
-                        <img class="img-fluid" src="src/assets/img/team-4.jpg" alt="">
+                        <img class="img-fluid" src="Pages/assets/img/team-4.jpg" alt="">
                     </div>
                     <h5 class="mb-0">Adams</h5>
                     <small>Line Cook</small>
@@ -710,7 +708,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="src/assets/img/testimonial-1.jpg" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="Pages/assets/img/testimonial-1.jpg" style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h5 class="mb-1">John Doe</h5>
                                 <small>Food Critic</small>
@@ -721,7 +719,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>I've been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="src/assets/img/testimonial-2.jpg" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="Pages/assets/img/testimonial-2.jpg" style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h5 class="mb-1">Jane Smith</h5>
                                 <small>Business Owner</small>
@@ -732,7 +730,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="src/assets/img/testimonial-3.jpg" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="Pages/assets/img/testimonial-3.jpg" style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h5 class="mb-1">David Johnson</h5>
                                 <small>Event Planner</small>
@@ -743,7 +741,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="src/assets/img/testimonial-4.jpg" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="Pages/assets/img/testimonial-4.jpg" style="width: 50px; height: 50px;">
                             <div class="ps-3">
                                 <h5 class="mb-1">Emily Davis</h5>
                                 <small>Food Blogger</small>
@@ -763,9 +761,9 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
-                        <a class="btn btn-link" href="src/about.php">About Us</a>
-                        <a class="btn btn-link" href="src/contact.php">Contact Us</a>
-                        <a class="btn btn-link" href="src/booking.php">Booking</a>
+                        <a class="btn btn-link" href="Pages/about.php">About Us</a>
+                        <a class="btn btn-link" href="Pages/contact.php">Contact Us</a>
+                        <a class="btn btn-link" href="Pages/booking.php">Booking</a>
                         <a class="btn btn-link" href="">Privacy Policy</a>
                         <a class="btn btn-link" href="">Terms & Condition</a>
                     </div>
@@ -803,16 +801,14 @@
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">Foodzy</a>, All Right Reserved.
-
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">22pts</a><br><br>
+							Designed By <a class="border-bottom" href="#">22pts</a><br><br>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FAQs</a>
+                                <a href="#">Home</a>
+                                <a href="#">Cookies</a>
+                                <a href="#">Help</a>
+                                <a href="#">FAQs</a>
                             </div>
                         </div>
                     </div>
@@ -829,18 +825,17 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="src/assets/lib/wow/wow.min.js"></script>
-    <script src="src/assets/lib/easing/easing.min.js"></script>
-    <script src="src/assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="src/assets/lib/counterup/counterup.min.js"></script>
-    <script src="src/assets/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="src/assets/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="src/assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="src/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="Pages/assets/lib/wow/wow.min.js"></script>
+    <script src="Pages/assets/lib/easing/easing.min.js"></script>
+    <script src="Pages/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="Pages/assets/lib/counterup/counterup.min.js"></script>
+    <script src="Pages/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="Pages/assets/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="Pages/assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="Pages/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="src/assets/js/main.js"></script>
+    <script src="Pages/assets/js/main.js"></script>
 </body>
 
 </html>
-<?php session_destroy(); pg_close($conn); ?>
