@@ -21,8 +21,7 @@ COPY . .
 RUN composer deploy
 
 # Set proper permissions for Apache to access the files
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage
+RUN chown -R www-data:www-data /var/www/html
 
 # Expose port 80 for Apache
 EXPOSE 80
