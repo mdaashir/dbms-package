@@ -1,5 +1,5 @@
-# Use the official PHP image with Apache
-FROM php:8.2-apache
+# Use the official PHP image as the base image
+FROM php:8.2-alpine
 
 # Install necessary system libraries and PHP extensions for PostgreSQL and other features
 RUN apt-get update && apt-get install -y \
@@ -27,4 +27,4 @@ RUN chown -R www-data:www-data /var/www/html
 EXPOSE 8000
 
 # Start php server
-RUN composer start
+CMD ["composer", "start"]
