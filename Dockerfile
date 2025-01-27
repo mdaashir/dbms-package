@@ -23,8 +23,8 @@ RUN composer deploy
 # Set proper permissions for Apache to access the files
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose port 80 for Apache
-EXPOSE 80
+# Expose port 8000
+EXPOSE 8000
 
-# Start Apache server in the foreground
-CMD ["apache2-foreground"]
+# Start php server
+RUN composer start
