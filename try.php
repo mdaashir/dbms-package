@@ -1,9 +1,15 @@
-<?php 
-    // Include the database connection file
-    include("inc/connect.inc.php");
+<?php
+
+    require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/Config/Database.php';
+    use Services\UserService;
+    use Services\MenuService;
+    use Services\CartService;
+    use Services\BillService;
 
     // Function to handle form submission for inserting data
-    function insertData($conn) {
+    function insertData($conn): void
+    {
         // Check if form is submitted
         if(isset($_POST['submit_insert'])) {
             // Retrieve data from form
@@ -28,7 +34,8 @@
     }
 
     // Function to handle form submission for updating data
-    function updateData($conn) {
+    function updateData($conn): void
+    {
         // Check if form is submitted
         if(isset($_POST['submit_update'])) {
             // Retrieve data from form
@@ -47,15 +54,16 @@
         }
     }
 
-        // Function to handle form submission for deleteing data
-        function deleteData($conn) {
+        // Function to handle form submission for deleting data
+        function deleteData($conn): void
+        {
             // Check if form is submitted
             if(isset($_POST['submit_delete'])) {
                 // Retrieve data from form
                 $id = $_POST['delete_id'];
 
                 $delete_query = pg_query($conn, "CALL delete_menu($id)");
-    
+
                 // Check if delete was successful
                 if($delete_query) {
                     echo "<script>alert('Record deleted successfully');</script>";
@@ -164,7 +172,7 @@
                 <th>Price</th>
                 <th>Picture</th>
             </tr>
-            <?php 
+            <?php
                 // Fetch data from sample_menu table
                 $menu_query = pg_query($conn, "SELECT * FROM sample_menu ORDER BY id ASC");
                 while ($row = pg_fetch_assoc($menu_query)) {
