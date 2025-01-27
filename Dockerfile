@@ -2,11 +2,10 @@
 FROM php:8.2-alpine
 
 # Install necessary system libraries and PHP extensions for PostgreSQL and other features
-RUN apt-get update && apt-get install -y \
+RUN apk update && apk add \
     libpq-dev \
     unzip \
-    && docker-php-ext-install pdo_pgsql pgsql \
-    && a2enmod rewrite
+    && docker-php-ext-install pdo_pgsql pgsql
 
 # Install Composer (Dependency Manager for PHP)
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
