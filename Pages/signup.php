@@ -1,22 +1,25 @@
-<?php include("inc/connect.inc.php"); ?>
+<?php require __DIR__ . '/partials/header.php'; ?>
+<?php require __DIR__ . '/partials/navbar.php'; ?>
 <?php
 
-session_start();
 if (!isset($_SESSION['username']) || $_SESSION['role'] === 'admin') {
 }
 else {
 	header("location: ../index.php");
 }
 
-function insertIntoUsers($conn) {
-    if (isset($_POST['submit_user'])) {
-        $user_name = $_POST['username'];
-        $phone_or_email = $_POST['email'];
-        $password_hash = $_POST['confirmPassword'];
-        $password = $_POST['password'];
-        $role = isset($_POST['role']) ? $_POST['role'] : '';
+use Services\UserService;
 
-        if (empty($user_name) || empty($phone_or_email) || empty($password_hash) || empty($password)) {
+if (isset($_POST['submit_user'])){
+
+        $user_name = $_POST['user_name'];
+        $email_id = $_POST['email_id'];
+        $phone_number = $_POST['phone_number'];
+        $password = $_POST['password'];
+        $password_hash = $_POST['confirmPassword'];
+        $role = $_POST['role'] ?? '';
+
+        if (empty($user_name) || empty($phone_number) || empty($password_hash) || empty($password) || empty($email_id)) {
             echo "<script>alert('Please fill out all fields.');</script>";
             return;
         }
@@ -25,134 +28,31 @@ function insertIntoUsers($conn) {
             echo "<script>alert('Passwords do not match. Please try again.');</script>";
             return;
         }
+        $data = [
+            'user_name' => $user_name,
+            'phone_number' => $phone_number,
+            'email_id' => $email_id,
+            'password_hash' => $password_hash,
+            'role' => $role ?? ''
+        ];
 
-        $insert_query = "INSERT INTO users (user_name, ";
-
-        if (filter_var($phone_or_email, FILTER_VALIDATE_EMAIL)) {
-            $insert_query .= "email_id";
-        } else {
-            $insert_query .= "phone_number";
+        try {
+            $result = UserService::createUser($data);
+        } catch (Exception $e) {
+            echo "<script>alert('Error inserting data');</script>";
         }
 
-        $insert_query .= ", password_hash";
-
-        if (!empty($role)) {
-            $insert_query .= ", role";
-        }
-
-        $insert_query .= ") VALUES ('$user_name', '$phone_or_email', '$password_hash'";
-
-        if (!empty($role)) {
-            $insert_query .= ", '$role'";
-        }
-
-        $insert_query .= ")";
-
-        $result = pg_query($conn, $insert_query);
         if ($result) {
             // echo "<script>alert('Data inserted successfully');</script>";
             $_SESSION['username'] = $user_name;
-            $_SESSION['role'] = $role;
+            $_SESSION['uid'] = $result->id;
+            $_SESSION['role'] = $role ?? $result->role;
             header("Location: ../index.php");
         } else {
             echo "<script>alert('Error inserting data');</script>";
         }
     }
-}
-
-insertIntoUsers($conn);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Foodzy - Sign Up</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="assets/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="../index.php" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Foodzy</h1>
-                    <!-- <img src="assets/img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="../index.php" class="nav-item nav-link">Home</a>
-                        <a href="about.php" class="nav-item nav-link">About</a>
-                        <a href="service.php" class="nav-item nav-link">Service</a>
-                        <a href="menu.php" class="nav-item nav-link">Menu</a>
-                        <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="booking.php" class="dropdown-item">Booking</a>
-				<a href="checkout.php" class="dropdown-item">Your Orders</a>
-                                <a href="team.php" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                            </div>
-                        </div>
-                        <a href="contact.php" class="nav-item nav-link active">Contact</a>
-                    </div>
-                    <a href="booking.php" class="btn btn-primary py-2 px-4">ORDER NOW</a>
-                </div>
-            </nav>
-
-            <div class="container-xxl py-5 bg-dark hero-header mb-5">
-                <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Sign Up</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Sign Up</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar & Hero End -->
-
         <!-- Sign Up Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -169,12 +69,16 @@ insertIntoUsers($conn);
                             <h3 class="mb-4">Customer Registration</h3>
                             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username">
+                                    <label for="user_name">Username</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Your Email">
-                                    <label for="email">Phone / Email address</label>
+                                    <input type="text" class="form-control" id="email_id" name="email_id" placeholder="Your Email">
+                                    <label for="email_id">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number">
+                                    <label for="">Phone Number</label>
                                 </div>
                                 <div class="form-floating mb-4">
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
@@ -184,14 +88,14 @@ insertIntoUsers($conn);
                                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
                                     <label for="confirmPassword">Confirm Password</label>
                                 </div>
-                              
+
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary btn-lg" name="submit_user" type="submit">Register</button>
                                 </div>
-                             </form>
-                             <br>
-                             <p class="mb">   Existing User ?...  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-                             <a class="section-title ff-secondary text-center text-primary fw-normal" href="login.php">Login</a>
+                            </form>
+                            <br>
+                            <p class="mb">   Existing User ?...  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                            <a class="section-title ff-secondary text-center text-primary fw-normal" href="login.php">Login</a>
                             </p>
                         </div>
                     </div>
@@ -199,77 +103,4 @@ insertIntoUsers($conn);
             </div>
         </div>
         <!-- Sign Up End -->
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
-                        <a class="btn btn-link" href="about.php">About Us</a>
-                        <a class="btn btn-link" href="contact.php">Contact Us</a>
-                        <a class="btn btn-link" href="booking.php">Booking</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
-                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
-                        <p>09AM - 09PM</p>
-                        <h5 class="text-light fw-normal">Sunday</h5>
-                        <p>10AM - 08PM</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
-                        <p>To get updates about Us: SUBSCRIBE</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Foodzy</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">22pts</a><br><br>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FAQs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/lib/wow/wow.min.js"></script>
-    <script src="assets/lib/easing/easing.min.js"></script>
-    <script src="assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="assets/lib/counterup/counterup.min.js"></script>
-    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="assets/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
-<?php pg_close($conn); ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>

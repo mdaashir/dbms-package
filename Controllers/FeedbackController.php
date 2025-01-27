@@ -10,12 +10,12 @@ use Exception;
 
 class FeedbackController
 {
-    public function handleRequest()
+    public function handleRequest($req_action = null, $req_email_id = null, $req_perPage = null, $req_data = [])
     {
-        $action = $_POST['action'] ?? null;
-        $email_id = $_POST['email_id'] ?? null;
-        $perPage = $_POST['perPage'] ?? null;
-        $data = $_POST;
+        $action = $_POST['action'] ?? $req_action;
+        $email_id = $_POST['email_id'] ?? $req_email_id;
+        $perPage = $_POST['perPage'] ?? $req_perPage;
+        $data = $_POST ?? $req_data;
 
         try {
             switch ($action) {

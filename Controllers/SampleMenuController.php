@@ -10,12 +10,12 @@ use Exception;
 
 class SampleMenuController
 {
-    public function handleRequest()
+    public function handleRequest($req_action = null, $req_id = null, $req_perPage = null, $req_data = [])
     {
-        $action = $_POST['action'] ?? null;
-        $id = $_POST['id'] ?? null;
-        $perPage = $_POST['perPage'] ?? null;
-        $data = $_POST;
+        $action = $_POST['action'] ?? $req_action;
+        $id = $_POST['id'] ?? $req_id;
+        $perPage = $_POST['perPage'] ?? $req_perPage;
+        $data = $_POST ?? $req_data;
 
         try {
             switch ($action) {

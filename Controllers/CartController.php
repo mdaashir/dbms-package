@@ -10,12 +10,12 @@ use Exception;
 
 class CartController
 {
-    public function handleRequest()
+    public function handleRequest($req_action = null, $req_cartId = null, $req_perPage = null, $req_data = [])
     {
-        $action = $_POST['action'] ?? null;
-        $cartId = $_POST['cart_id'] ?? null;
-        $perPage = $_POST['perPage'] ?? null;
-        $data = $_POST;
+        $action = $_POST['action'] ?? $req_action;
+        $cartId = $_POST['cart_id'] ?? $req_cartId;
+        $perPage = $_POST['perPage'] ?? $req_perPage;
+        $data = $_POST ?? $req_data;
 
         try {
             switch ($action) {

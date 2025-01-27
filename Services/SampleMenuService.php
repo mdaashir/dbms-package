@@ -2,6 +2,8 @@
 
 namespace Services;
 
+use Illuminate\Pagination\Paginator;
+
 require __DIR__ . '/../Models/SampleMenu.php';
 use Models\SampleMenu;
 use Exception;
@@ -54,10 +56,10 @@ class SampleMenuService
     public static function getAllSampleMenus($perPage = null)
     {
         if ($perPage) {
-            return SampleMenu::paginate($perPage);
+            return SampleMenu::orderBy('id')->paginate($perPage);
         }
 
-        return SampleMenu::all();
+        return SampleMenu::orderBy('id')->get();
     }
 
     /**

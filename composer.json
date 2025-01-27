@@ -14,22 +14,29 @@
 	],
 	"require": {
 		"ext-pgsql": "*",
-		"vlucas/phpdotenv": "^5.6",
-		"illuminate/database": "^11.40"
+		"illuminate/database": "^11.40",
+		"illuminate/pagination": "^11.40"
 	},
 	"scripts": {
 		"start": "php -S localhost:8000",
 		"install": "composer install --prefer-dist --no-progress",
-		"install-prod": "composer install --prefer-dist --no-dev --no-progress --optimize-autoloader"
+		"deploy": [
+			"composer install --prefer-dist --no-dev --no-progress --optimize-autoloader",
+			"composer dump-autoload -o",
+			"@start"
+		]
 	},
 	"autoload": {
 		"psr-4": {
-			"Models\\": "app/Models/",
-			"Services\\": "app/Services/",
-			"Controllers\\": "app/Http/Controllers/"
+			"Models\\": "Models/",
+			"Services\\": "Services/",
+			"Controllers\\": "Controllers/"
 		}
 	},
 	"config": {
 		"process-timeout": 0
+	},
+	"require-dev": {
+		"vlucas/phpdotenv": "^5.6"
 	}
 }
