@@ -15,7 +15,7 @@ CREATE TABLE sample_menu (
     is_veg BOOLEAN DEFAULT FALSE NOT NULL,
     description VARCHAR(150) NOT NULL DEFAULT 'Delicious food item',
     price FLOAT DEFAULT 0 NOT NULL CHECK (price >= 0),
-    picture TEXT NOT NULL DEFAULT 'img/menu-1.png',
+    picture TEXT NOT NULL DEFAULT 'assets/img/menu-1.jpg',
     deleted_at TIMESTAMP NULL DEFAULT NULL
 );
 
@@ -162,17 +162,17 @@ CREATE TABLE feedback (
     email_id VARCHAR(50) PRIMARY KEY,
     profession VARCHAR(50),
     messages VARCHAR(150),
-    picture TEXT DEFAULT 'img/user.png',
+    picture TEXT DEFAULT 'assets/img/user.png',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Sample data for feedback
 INSERT INTO feedback (user_name, email_id, profession, messages, picture)
 VALUES
-    ('John Doe', 'testimonal1@gmail.com', 'Food Critic', 'Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!', 'img/testimonial-1.jpg'),
-    ('Jane Smith', 'testimonal2@gmail.com', 'Business Owner', 'Ive been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!', 'img/testimonial-2.jpg'),
-    ('David Johnson', 'testimonal3@gmail.com', 'Event Planner', 'The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!', 'img/testimonial-3.jpg'),
-    ('Emily Davis', 'testimonal4@gmail.com', 'Food Blogger', 'Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!', 'img/testimonial-4.jpg');
+    ('John Doe', 'testimonal1@gmail.com', 'Food Critic', 'Foodzy is amazing! Their quality of service and food is unmatched. Highly recommended!', 'assets/img/testimonial-1.jpg'),
+    ('Jane Smith', 'testimonal2@gmail.com', 'Business Owner', 'Ive been ordering from Foodzy for years now, and they never disappoint. Great service and delicious food!', 'assets/img/testimonial-2.jpg'),
+    ('David Johnson', 'testimonal3@gmail.com', 'Event Planner', 'The team at Foodzy always goes above and beyond to make sure their customers are satisfied. Keep up the great work!', 'assets/img/testimonial-3.jpg'),
+    ('Emily Davis', 'testimonal4@gmail.com', 'Food Blogger', 'Foodzy has been my go-to restaurant for every occasion. Their attention to detail and flavor is unmatched!', 'assets/img/testimonial-4.jpg');
 
 -- Procedures for updating the menu
 CREATE OR REPLACE PROCEDURE update_menu(IN food_id INTEGER, IN food_price FLOAT)
