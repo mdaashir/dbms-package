@@ -22,8 +22,7 @@
 		"install": "composer install --prefer-dist --no-progress",
 		"deploy": [
 			"composer install --prefer-dist --no-dev --no-progress --optimize-autoloader",
-			"composer dump-autoload -o",
-			"@start"
+			"composer dump-autoload -o"
 		]
 	},
 	"autoload": {
